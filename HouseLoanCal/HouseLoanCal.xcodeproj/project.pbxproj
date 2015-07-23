@@ -8,12 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		295B352B1B5DD155006B9A0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B352A1B5DD155006B9A0F /* main.m */; };
-		295B352E1B5DD155006B9A0F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B352D1B5DD155006B9A0F /* AppDelegate.m */; };
-		295B35311B5DD155006B9A0F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B35301B5DD155006B9A0F /* ViewController.m */; };
 		295B35341B5DD155006B9A0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295B35321B5DD155006B9A0F /* Main.storyboard */; };
 		295B35361B5DD155006B9A0F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 295B35351B5DD155006B9A0F /* Images.xcassets */; };
 		295B35391B5DD155006B9A0F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 295B35371B5DD155006B9A0F /* LaunchScreen.xib */; };
 		295B35451B5DD155006B9A0F /* HouseLoanCalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B35441B5DD155006B9A0F /* HouseLoanCalTests.m */; };
+		295B35501B5DD4C2006B9A0F /* HLCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B354F1B5DD4C2006B9A0F /* HLCAppDelegate.m */; };
+		295B35531B5DD84F006B9A0F /* HLCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B35521B5DD84F006B9A0F /* HLCRootViewController.m */; };
+		295B355D1B5E1A28006B9A0F /* HLCLoanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B355C1B5E1A28006B9A0F /* HLCLoanController.m */; };
+		295B35601B5E1A57006B9A0F /* HLCProvidentFundLoanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B355F1B5E1A57006B9A0F /* HLCProvidentFundLoanController.m */; };
+		295B35631B5E1A74006B9A0F /* HLCCommercialLoanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B35621B5E1A74006B9A0F /* HLCCommercialLoanController.m */; };
+		295B35661B5E1A87006B9A0F /* HLCMixedLoanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B35651B5E1A87006B9A0F /* HLCMixedLoanController.m */; };
+		295B35691B5E1B02006B9A0F /* HLCSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B35681B5E1B02006B9A0F /* HLCSettingController.m */; };
+		295B356C1B5E203E006B9A0F /* HLCBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B356B1B5E203E006B9A0F /* HLCBaseNavigationController.m */; };
+		295B35701B5E29F1006B9A0F /* HLCBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B356F1B5E29F1006B9A0F /* HLCBaseTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,16 +37,31 @@
 		295B35251B5DD155006B9A0F /* HouseLoanCal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HouseLoanCal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		295B35291B5DD155006B9A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		295B352A1B5DD155006B9A0F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		295B352C1B5DD155006B9A0F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		295B352D1B5DD155006B9A0F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		295B352F1B5DD155006B9A0F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		295B35301B5DD155006B9A0F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		295B35331B5DD155006B9A0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		295B35351B5DD155006B9A0F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		295B35381B5DD155006B9A0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		295B353E1B5DD155006B9A0F /* HouseLoanCalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HouseLoanCalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		295B35431B5DD155006B9A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		295B35441B5DD155006B9A0F /* HouseLoanCalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HouseLoanCalTests.m; sourceTree = "<group>"; };
+		295B354E1B5DD4C2006B9A0F /* HLCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLCAppDelegate.h; sourceTree = "<group>"; };
+		295B354F1B5DD4C2006B9A0F /* HLCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLCAppDelegate.m; sourceTree = "<group>"; };
+		295B35511B5DD84F006B9A0F /* HLCRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLCRootViewController.h; sourceTree = "<group>"; };
+		295B35521B5DD84F006B9A0F /* HLCRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLCRootViewController.m; sourceTree = "<group>"; };
+		295B35571B5DE20E006B9A0F /* HLCMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLCMacros.h; sourceTree = "<group>"; };
+		295B355B1B5E1A28006B9A0F /* HLCLoanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCLoanController.h; path = Controller/HLCLoanController.h; sourceTree = "<group>"; };
+		295B355C1B5E1A28006B9A0F /* HLCLoanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCLoanController.m; path = Controller/HLCLoanController.m; sourceTree = "<group>"; };
+		295B355E1B5E1A57006B9A0F /* HLCProvidentFundLoanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCProvidentFundLoanController.h; path = Controller/HLCProvidentFundLoanController.h; sourceTree = "<group>"; };
+		295B355F1B5E1A57006B9A0F /* HLCProvidentFundLoanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCProvidentFundLoanController.m; path = Controller/HLCProvidentFundLoanController.m; sourceTree = "<group>"; };
+		295B35611B5E1A74006B9A0F /* HLCCommercialLoanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCCommercialLoanController.h; path = Controller/HLCCommercialLoanController.h; sourceTree = "<group>"; };
+		295B35621B5E1A74006B9A0F /* HLCCommercialLoanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCCommercialLoanController.m; path = Controller/HLCCommercialLoanController.m; sourceTree = "<group>"; };
+		295B35641B5E1A87006B9A0F /* HLCMixedLoanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCMixedLoanController.h; path = Controller/HLCMixedLoanController.h; sourceTree = "<group>"; };
+		295B35651B5E1A87006B9A0F /* HLCMixedLoanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCMixedLoanController.m; path = Controller/HLCMixedLoanController.m; sourceTree = "<group>"; };
+		295B35671B5E1B02006B9A0F /* HLCSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCSettingController.h; path = Controller/HLCSettingController.h; sourceTree = "<group>"; };
+		295B35681B5E1B02006B9A0F /* HLCSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCSettingController.m; path = Controller/HLCSettingController.m; sourceTree = "<group>"; };
+		295B356A1B5E203E006B9A0F /* HLCBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCBaseNavigationController.h; path = Controller/HLCBaseNavigationController.h; sourceTree = "<group>"; };
+		295B356B1B5E203E006B9A0F /* HLCBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCBaseNavigationController.m; path = Controller/HLCBaseNavigationController.m; sourceTree = "<group>"; };
+		295B356E1B5E29F1006B9A0F /* HLCBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCBaseTableViewController.h; path = Controller/HLCBaseTableViewController.h; sourceTree = "<group>"; };
+		295B356F1B5E29F1006B9A0F /* HLCBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCBaseTableViewController.m; path = Controller/HLCBaseTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +103,15 @@
 		295B35271B5DD155006B9A0F /* HouseLoanCal */ = {
 			isa = PBXGroup;
 			children = (
-				295B352C1B5DD155006B9A0F /* AppDelegate.h */,
-				295B352D1B5DD155006B9A0F /* AppDelegate.m */,
-				295B352F1B5DD155006B9A0F /* ViewController.h */,
-				295B35301B5DD155006B9A0F /* ViewController.m */,
+				295B356D1B5E27A6006B9A0F /* Category */,
+				295B35561B5DDB0F006B9A0F /* Controller */,
+				295B35551B5DDB08006B9A0F /* Model */,
+				295B35541B5DDAFF006B9A0F /* View */,
+				295B354E1B5DD4C2006B9A0F /* HLCAppDelegate.h */,
+				295B354F1B5DD4C2006B9A0F /* HLCAppDelegate.m */,
+				295B35511B5DD84F006B9A0F /* HLCRootViewController.h */,
+				295B35521B5DD84F006B9A0F /* HLCRootViewController.m */,
+				295B35571B5DE20E006B9A0F /* HLCMacros.h */,
 				295B35321B5DD155006B9A0F /* Main.storyboard */,
 				295B35351B5DD155006B9A0F /* Images.xcassets */,
 				295B35371B5DD155006B9A0F /* LaunchScreen.xib */,
@@ -117,6 +144,48 @@
 				295B35431B5DD155006B9A0F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		295B35541B5DDAFF006B9A0F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		295B35551B5DDB08006B9A0F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		295B35561B5DDB0F006B9A0F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				295B356E1B5E29F1006B9A0F /* HLCBaseTableViewController.h */,
+				295B356F1B5E29F1006B9A0F /* HLCBaseTableViewController.m */,
+				295B356A1B5E203E006B9A0F /* HLCBaseNavigationController.h */,
+				295B356B1B5E203E006B9A0F /* HLCBaseNavigationController.m */,
+				295B355B1B5E1A28006B9A0F /* HLCLoanController.h */,
+				295B355C1B5E1A28006B9A0F /* HLCLoanController.m */,
+				295B355E1B5E1A57006B9A0F /* HLCProvidentFundLoanController.h */,
+				295B355F1B5E1A57006B9A0F /* HLCProvidentFundLoanController.m */,
+				295B35611B5E1A74006B9A0F /* HLCCommercialLoanController.h */,
+				295B35621B5E1A74006B9A0F /* HLCCommercialLoanController.m */,
+				295B35641B5E1A87006B9A0F /* HLCMixedLoanController.h */,
+				295B35651B5E1A87006B9A0F /* HLCMixedLoanController.m */,
+				295B35671B5E1B02006B9A0F /* HLCSettingController.h */,
+				295B35681B5E1B02006B9A0F /* HLCSettingController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		295B356D1B5E27A6006B9A0F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +288,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				295B35311B5DD155006B9A0F /* ViewController.m in Sources */,
-				295B352E1B5DD155006B9A0F /* AppDelegate.m in Sources */,
+				295B35701B5E29F1006B9A0F /* HLCBaseTableViewController.m in Sources */,
+				295B355D1B5E1A28006B9A0F /* HLCLoanController.m in Sources */,
+				295B35531B5DD84F006B9A0F /* HLCRootViewController.m in Sources */,
+				295B35501B5DD4C2006B9A0F /* HLCAppDelegate.m in Sources */,
+				295B35601B5E1A57006B9A0F /* HLCProvidentFundLoanController.m in Sources */,
 				295B352B1B5DD155006B9A0F /* main.m in Sources */,
+				295B356C1B5E203E006B9A0F /* HLCBaseNavigationController.m in Sources */,
+				295B35631B5E1A74006B9A0F /* HLCCommercialLoanController.m in Sources */,
+				295B35661B5E1A87006B9A0F /* HLCMixedLoanController.m in Sources */,
+				295B35691B5E1B02006B9A0F /* HLCSettingController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +492,7 @@
 				295B354A1B5DD155006B9A0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		295B354B1B5DD155006B9A0F /* Build configuration list for PBXNativeTarget "HouseLoanCalTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +501,7 @@
 				295B354D1B5DD155006B9A0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

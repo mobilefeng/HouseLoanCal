@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  HLCBaseTableViewController.h
 //  HouseLoanCal
 //
 //  Created by 徐杨 on 15/7/21.
@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface HLCBaseTableViewController : UITableViewController
 
-@property (strong, nonatomic) UIWindow *window;
-
+- (id)initViewController;
 
 @end
-

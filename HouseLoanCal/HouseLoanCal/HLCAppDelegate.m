@@ -1,22 +1,28 @@
 //
-//  AppDelegate.m
+//  HLCAppDelegate.m
 //  HouseLoanCal
 //
 //  Created by 徐杨 on 15/7/21.
 //  Copyright (c) 2015年 xuyang. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "HLCAppDelegate.h"
 
-@interface AppDelegate ()
+//
+#import "HLCRootViewController.h"
+
+@interface HLCAppDelegate ()
 
 @end
 
-@implementation AppDelegate
-
+@implementation HLCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = [[HLCRootViewController alloc] init];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
