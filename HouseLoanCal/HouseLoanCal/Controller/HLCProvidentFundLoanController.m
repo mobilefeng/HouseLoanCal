@@ -22,8 +22,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setTitle:@"贷款"];
+    [self.navigationItem setTitle:@"公积金贷款"];
 }
-
 
 @end

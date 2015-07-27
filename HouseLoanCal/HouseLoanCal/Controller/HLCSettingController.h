@@ -9,16 +9,6 @@
 #import "HLCBaseTableViewController.h"
 
 /*
- *  Section
- */
-enum {
-    // 关于我们
-    kHLCSettingSectionAboutUs = 0,
-    //
-    kHLCSettingSectionCount,
-};
-
-/*
  *  AboutUs Section Row
  */
 enum {

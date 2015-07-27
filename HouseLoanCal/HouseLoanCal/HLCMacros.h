@@ -30,12 +30,35 @@
 // 页面背景颜色
 #define kHLCBackgroundColor         (UIColorFromRGB(0xEEEEEE))
 
+// Cell 标题颜色
+#define kHLCCellTitleColor          (UIColorFromRGB(0x666666))
+
+// Cell 详情颜色
+#define kHLCCellDetailColor         (UIColorFromRGB(0x666666))
+
+// Cell 选中时的颜色
+#define kHLCCellSelectedColor       (UIColorFromRGB(0xF6F6F6))
+
+// Cell 分隔线颜色
+#define kHLCCellSeparatorLineColor  (UIColorFromRGB(0xD6D6D6))
+
 // ___________________________________________________________
 //
 
 // NavBar 标题字体
 #define kHLCNavBarTitleFont         (20.0)
 
+// Cell 标题字体
+#define kHLCCellTitleFont           (18.0)
 
+// Cell 详情字体
+#define kHLCCellDetailFont          (16.0)
+
+
+// ___________________________________________________________
+//
+
+// cell 高度
+#define kHLCHeightForCell           (40.0)
 
 #endif

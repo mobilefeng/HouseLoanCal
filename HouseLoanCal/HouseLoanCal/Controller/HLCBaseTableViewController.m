@@ -14,16 +14,16 @@
 @implementation HLCBaseTableViewController
 
 - (id)initViewController {
-    return [self initWithStyle:UITableViewStylePlain];
+    return [self initWithStyle:UITableViewStyleGrouped];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     self.tableView.backgroundView = [[UIView alloc] init];
     self.tableView.backgroundView.backgroundColor = kHLCBackgroundColor;
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 @end
