@@ -22,7 +22,8 @@
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     self.tableView.backgroundView = [[UIView alloc] init];
-    self.tableView.backgroundView.backgroundColor = kHLCBackgroundColor;
+//    self.tableView.backgroundView.backgroundColor = kHLCBackgroundColor;
+    self.tableView.backgroundView.backgroundColor = [UIColor redColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 

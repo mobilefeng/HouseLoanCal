@@ -19,10 +19,12 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationItem setTitle:@"公积金贷款"];
 }
+
+#pragma mark - DataSource
+
 
 @end

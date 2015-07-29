@@ -10,10 +10,7 @@
 
 //
 #import "HLCMacros.h"
-
-#import "HLCSettingVersionCell.h"
-#import "HLCSettingScoreCell.h"
-#import "HLCSettingRecommendCell.h"
+#import "HLCSettingTableViewCell.h"
 
 @implementation HLCSettingController
 
@@ -52,21 +49,21 @@
     switch (indexPath.row) {
         case kHLCSettingVersion: {
             static NSString *versionCellIndentifier = @"VersionCellIndetifier";
-            HLCSettingVersionCell *cell = [tableView dequeueReusableCellWithIdentifier:versionCellIndentifier];
+            HLCSettingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:versionCellIndentifier];
             if (!cell) {
-                cell = [[HLCSettingVersionCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:versionCellIndentifier];
+                cell = [[HLCSettingTableViewCell alloc] initWithHLCStyle:(HLCSettingTableViewCellStyleContent) reuseIdentifier:versionCellIndentifier];
             }
             [cell setTitle:@"版本"];
-            [cell setVersion:@"1.0.0"];
+            [cell setContent:@"1.0.0"];
             
             return cell;
         }
             break;
         case kHLCSettingScore: {
             static NSString *scoreCellIndentifier = @"ScoreCellIndentifier";
-            HLCSettingScoreCell *cell = [tableView dequeueReusableCellWithIdentifier:scoreCellIndentifier];
+            HLCSettingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:scoreCellIndentifier];
             if (!cell) {
-                cell = [[HLCSettingScoreCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:scoreCellIndentifier];
+                cell = [[HLCSettingTableViewCell alloc] initWithHLCStyle:(HLCSettingTableViewCellStyleAccessory) reuseIdentifier:scoreCellIndentifier];
             }
             [cell setTitle:@"评分"];
             
@@ -75,9 +72,9 @@
             break;
         case kHLCSettingRecommend: {
             static NSString *recommendCellIndentifier = @"RecommendCellIndentifier";
-            HLCSettingRecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:recommendCellIndentifier];
+            HLCSettingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:recommendCellIndentifier];
             if (!cell) {
-                cell = [[HLCSettingRecommendCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:recommendCellIndentifier];
+                cell = [[HLCSettingTableViewCell alloc] initWithHLCStyle:(HLCSettingTableViewCellStyleAccessory) reuseIdentifier:recommendCellIndentifier];
             }
             [cell setTitle:@"推荐给朋友"];
             

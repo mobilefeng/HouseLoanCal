@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2933846F1B611E8900D0B455 /* HLCTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2933846E1B611E8900D0B455 /* HLCTableViewCell.m */; };
-		293384721B6122B200D0B455 /* HLCSettingVersionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 293384711B6122B200D0B455 /* HLCSettingVersionCell.m */; };
+		2956D9F71B6920A500E34536 /* HLCSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2956D9F61B6920A500E34536 /* HLCSettingTableViewCell.m */; };
 		295B352B1B5DD155006B9A0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B352A1B5DD155006B9A0F /* main.m */; };
 		295B35341B5DD155006B9A0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295B35321B5DD155006B9A0F /* Main.storyboard */; };
 		295B35361B5DD155006B9A0F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 295B35351B5DD155006B9A0F /* Images.xcassets */; };
@@ -23,8 +23,6 @@
 		295B35691B5E1B02006B9A0F /* HLCSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B35681B5E1B02006B9A0F /* HLCSettingController.m */; };
 		295B356C1B5E203E006B9A0F /* HLCBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B356B1B5E203E006B9A0F /* HLCBaseNavigationController.m */; };
 		295B35701B5E29F1006B9A0F /* HLCBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B356F1B5E29F1006B9A0F /* HLCBaseTableViewController.m */; };
-		295FC2C61B660E3700989D69 /* HLCSettingScoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 295FC2C51B660E3700989D69 /* HLCSettingScoreCell.m */; };
-		295FC2C91B6610D100989D69 /* HLCSettingRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 295FC2C81B6610D100989D69 /* HLCSettingRecommendCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +38,8 @@
 /* Begin PBXFileReference section */
 		2933846D1B611E8900D0B455 /* HLCTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCTableViewCell.h; path = View/HLCTableViewCell.h; sourceTree = "<group>"; };
 		2933846E1B611E8900D0B455 /* HLCTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCTableViewCell.m; path = View/HLCTableViewCell.m; sourceTree = "<group>"; };
-		293384701B6122B200D0B455 /* HLCSettingVersionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCSettingVersionCell.h; path = View/HLCSettingVersionCell.h; sourceTree = "<group>"; };
-		293384711B6122B200D0B455 /* HLCSettingVersionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCSettingVersionCell.m; path = View/HLCSettingVersionCell.m; sourceTree = "<group>"; };
+		2956D9F51B6920A500E34536 /* HLCSettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCSettingTableViewCell.h; path = View/HLCSettingTableViewCell.h; sourceTree = "<group>"; };
+		2956D9F61B6920A500E34536 /* HLCSettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCSettingTableViewCell.m; path = View/HLCSettingTableViewCell.m; sourceTree = "<group>"; };
 		295B35251B5DD155006B9A0F /* HouseLoanCal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HouseLoanCal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		295B35291B5DD155006B9A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		295B352A1B5DD155006B9A0F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -70,10 +68,6 @@
 		295B356B1B5E203E006B9A0F /* HLCBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCBaseNavigationController.m; path = Controller/HLCBaseNavigationController.m; sourceTree = "<group>"; };
 		295B356E1B5E29F1006B9A0F /* HLCBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCBaseTableViewController.h; path = Controller/HLCBaseTableViewController.h; sourceTree = "<group>"; };
 		295B356F1B5E29F1006B9A0F /* HLCBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCBaseTableViewController.m; path = Controller/HLCBaseTableViewController.m; sourceTree = "<group>"; };
-		295FC2C41B660E3700989D69 /* HLCSettingScoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCSettingScoreCell.h; path = View/HLCSettingScoreCell.h; sourceTree = "<group>"; };
-		295FC2C51B660E3700989D69 /* HLCSettingScoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCSettingScoreCell.m; path = View/HLCSettingScoreCell.m; sourceTree = "<group>"; };
-		295FC2C71B6610D100989D69 /* HLCSettingRecommendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCSettingRecommendCell.h; path = View/HLCSettingRecommendCell.h; sourceTree = "<group>"; };
-		295FC2C81B6610D100989D69 /* HLCSettingRecommendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCSettingRecommendCell.m; path = View/HLCSettingRecommendCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,12 +157,8 @@
 			children = (
 				2933846D1B611E8900D0B455 /* HLCTableViewCell.h */,
 				2933846E1B611E8900D0B455 /* HLCTableViewCell.m */,
-				293384701B6122B200D0B455 /* HLCSettingVersionCell.h */,
-				293384711B6122B200D0B455 /* HLCSettingVersionCell.m */,
-				295FC2C41B660E3700989D69 /* HLCSettingScoreCell.h */,
-				295FC2C51B660E3700989D69 /* HLCSettingScoreCell.m */,
-				295FC2C71B6610D100989D69 /* HLCSettingRecommendCell.h */,
-				295FC2C81B6610D100989D69 /* HLCSettingRecommendCell.m */,
+				2956D9F51B6920A500E34536 /* HLCSettingTableViewCell.h */,
+				2956D9F61B6920A500E34536 /* HLCSettingTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -315,13 +305,11 @@
 				295B35501B5DD4C2006B9A0F /* HLCAppDelegate.m in Sources */,
 				295B35601B5E1A57006B9A0F /* HLCProvidentFundLoanController.m in Sources */,
 				295B352B1B5DD155006B9A0F /* main.m in Sources */,
-				295FC2C91B6610D100989D69 /* HLCSettingRecommendCell.m in Sources */,
 				295B356C1B5E203E006B9A0F /* HLCBaseNavigationController.m in Sources */,
 				295B35631B5E1A74006B9A0F /* HLCCommercialLoanController.m in Sources */,
-				295FC2C61B660E3700989D69 /* HLCSettingScoreCell.m in Sources */,
-				293384721B6122B200D0B455 /* HLCSettingVersionCell.m in Sources */,
 				295B35661B5E1A87006B9A0F /* HLCMixedLoanController.m in Sources */,
 				295B35691B5E1B02006B9A0F /* HLCSettingController.m in Sources */,
+				2956D9F71B6920A500E34536 /* HLCSettingTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
