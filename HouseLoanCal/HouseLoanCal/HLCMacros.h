@@ -31,10 +31,10 @@
 #define kHLCBackgroundColor         (UIColorFromRGB(0xEEEEEE))
 
 // Cell 标题颜色
-#define kHLCCellTitleColor          (UIColorFromRGB(0x666666))
+#define kHLCCellTitleColor          (UIColorFromRGB(0x222222))
 
 // Cell 详情颜色
-#define kHLCCellDetailColor         (UIColorFromRGB(0x666666))
+#define kHLCCellDetailColor         (UIColorFromRGB(0x222222))
 
 // Cell 选中时的颜色
 #define kHLCCellSelectedColor       (UIColorFromRGB(0xF6F6F6))
@@ -59,6 +59,6 @@
 //
 
 // cell 高度
-#define kHLCHeightForCell           (40.0)
+#define kHLCHeightForCell           (44.0)
 
 #endif

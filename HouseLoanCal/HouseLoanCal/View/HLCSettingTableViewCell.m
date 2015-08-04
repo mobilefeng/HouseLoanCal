@@ -25,12 +25,13 @@
     
     if (self) {
         
-        CGFloat labelOffsetX = 10.0;
         CGFloat labelWidth = 100.0;
         CGFloat labelHeight = 20.0;
+        CGFloat labelOffsetX = 10.0;
+        CGFloat labelOffsetY = (self.bounds.size.height-labelHeight)*0.5;
         
         // 添加title
-        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(labelOffsetX, (self.bounds.size.height-labelHeight)*0.5, labelWidth, labelHeight)];
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(labelOffsetX, labelOffsetY, labelWidth, labelHeight)];
         _titleLabel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
         _titleLabel.textColor = kHLCCellTitleColor;
         _titleLabel.font = [UIFont systemFontOfSize:kHLCCellTitleFont];
@@ -38,7 +39,7 @@
         
         switch (style) {
             case HLCSettingTableViewCellStyleContent: {
-                _contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.size.width-labelOffsetX-labelWidth, (self.bounds.size.height-labelHeight)*0.5, labelWidth, labelHeight)];
+                _contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.size.width-labelOffsetX-labelWidth, labelOffsetY, labelWidth, labelHeight)];
                 _contentLabel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
                 _contentLabel.textColor = kHLCCellDetailColor;
                 _contentLabel.font = [UIFont systemFontOfSize:kHLCCellDetailFont];

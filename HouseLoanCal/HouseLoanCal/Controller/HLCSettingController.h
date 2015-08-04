@@ -9,7 +9,7 @@
 #import "HLCBaseTableViewController.h"
 
 /*
- *  AboutUs Section Row
+ *  Aboutus Section Row
  */
 enum {
     // 版本
@@ -18,7 +18,7 @@ enum {
     kHLCSettingScore,
     // 推荐给朋友
     kHLCSettingRecommend,
-    //
+    // Row 数
     kHLCSettingAboutUsCount,
 };
 

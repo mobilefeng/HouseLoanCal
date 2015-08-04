@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2933846F1B611E8900D0B455 /* HLCTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2933846E1B611E8900D0B455 /* HLCTableViewCell.m */; };
 		2956D9F71B6920A500E34536 /* HLCSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2956D9F61B6920A500E34536 /* HLCSettingTableViewCell.m */; };
+		2956D9FA1B692A5C00E34536 /* HLCLoanInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2956D9F91B692A5C00E34536 /* HLCLoanInputTableViewCell.m */; };
+		2956D9FD1B692A8E00E34536 /* HLCLoanOutputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2956D9FC1B692A8E00E34536 /* HLCLoanOutputTableViewCell.m */; };
 		295B352B1B5DD155006B9A0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B352A1B5DD155006B9A0F /* main.m */; };
 		295B35341B5DD155006B9A0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295B35321B5DD155006B9A0F /* Main.storyboard */; };
 		295B35361B5DD155006B9A0F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 295B35351B5DD155006B9A0F /* Images.xcassets */; };
@@ -40,6 +42,10 @@
 		2933846E1B611E8900D0B455 /* HLCTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCTableViewCell.m; path = View/HLCTableViewCell.m; sourceTree = "<group>"; };
 		2956D9F51B6920A500E34536 /* HLCSettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCSettingTableViewCell.h; path = View/HLCSettingTableViewCell.h; sourceTree = "<group>"; };
 		2956D9F61B6920A500E34536 /* HLCSettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCSettingTableViewCell.m; path = View/HLCSettingTableViewCell.m; sourceTree = "<group>"; };
+		2956D9F81B692A5C00E34536 /* HLCLoanInputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCLoanInputTableViewCell.h; path = View/HLCLoanInputTableViewCell.h; sourceTree = "<group>"; };
+		2956D9F91B692A5C00E34536 /* HLCLoanInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCLoanInputTableViewCell.m; path = View/HLCLoanInputTableViewCell.m; sourceTree = "<group>"; };
+		2956D9FB1B692A8E00E34536 /* HLCLoanOutputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCLoanOutputTableViewCell.h; path = View/HLCLoanOutputTableViewCell.h; sourceTree = "<group>"; };
+		2956D9FC1B692A8E00E34536 /* HLCLoanOutputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCLoanOutputTableViewCell.m; path = View/HLCLoanOutputTableViewCell.m; sourceTree = "<group>"; };
 		295B35251B5DD155006B9A0F /* HouseLoanCal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HouseLoanCal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		295B35291B5DD155006B9A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		295B352A1B5DD155006B9A0F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -159,6 +165,10 @@
 				2933846E1B611E8900D0B455 /* HLCTableViewCell.m */,
 				2956D9F51B6920A500E34536 /* HLCSettingTableViewCell.h */,
 				2956D9F61B6920A500E34536 /* HLCSettingTableViewCell.m */,
+				2956D9F81B692A5C00E34536 /* HLCLoanInputTableViewCell.h */,
+				2956D9F91B692A5C00E34536 /* HLCLoanInputTableViewCell.m */,
+				2956D9FB1B692A8E00E34536 /* HLCLoanOutputTableViewCell.h */,
+				2956D9FC1B692A8E00E34536 /* HLCLoanOutputTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -298,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2956D9FA1B692A5C00E34536 /* HLCLoanInputTableViewCell.m in Sources */,
 				295B35701B5E29F1006B9A0F /* HLCBaseTableViewController.m in Sources */,
 				295B355D1B5E1A28006B9A0F /* HLCLoanController.m in Sources */,
 				295B35531B5DD84F006B9A0F /* HLCRootViewController.m in Sources */,
@@ -309,6 +320,7 @@
 				295B35631B5E1A74006B9A0F /* HLCCommercialLoanController.m in Sources */,
 				295B35661B5E1A87006B9A0F /* HLCMixedLoanController.m in Sources */,
 				295B35691B5E1B02006B9A0F /* HLCSettingController.m in Sources */,
+				2956D9FD1B692A8E00E34536 /* HLCLoanOutputTableViewCell.m in Sources */,
 				2956D9F71B6920A500E34536 /* HLCSettingTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

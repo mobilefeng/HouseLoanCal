@@ -8,6 +8,19 @@
 
 #import "HLCBaseTableViewController.h"
 
+/*
+ *  Section
+ */
+enum {
+    // 输入信息
+    kHLCLoanSectionInput = 0,
+    // 输出信息概要
+    kHLCLoanSectionOutputSummary,
+    // 输出信息明细
+    kHLCLoanSectionOutputDetail,
+    // Section 数
+    kHLCLoanSectionCount,
+};
 
 @interface HLCLoanController : HLCBaseTableViewController
 
