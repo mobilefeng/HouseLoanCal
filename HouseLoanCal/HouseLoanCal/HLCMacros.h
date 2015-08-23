@@ -42,6 +42,10 @@
 // Cell 分隔线颜色
 #define kHLCCellSeparatorLineColor  (UIColorFromRGB(0xD6D6D6))
 
+// Cell TextField 边框颜色
+#define kHLCCellTextFieldBoardColor (UIColorFromRGB(0xD6D6D6))
+
+
 // ___________________________________________________________
 //
 

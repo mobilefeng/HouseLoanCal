@@ -29,6 +29,8 @@
         self.selectedBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height-0.5)];
         self.selectedBackgroundView.backgroundColor = kHLCCellSelectedColor;
         
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         [self addBottomSeparatorLineLayer];
     }
     

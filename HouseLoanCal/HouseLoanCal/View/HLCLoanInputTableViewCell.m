@@ -11,25 +11,28 @@
 //
 #import "HLCMacros.h"
 
-@interface HLCLoanInputTableViewCell ()
+#import "HLCTextField.h"
+
+@interface HLCLoanInputTableViewCell () <UITextFieldDelegate>
 
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UITextField *textField;
 @property (nonatomic, strong) UIDatePicker *datePicker;
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
 
 @end
 
 @implementation HLCLoanInputTableViewCell
 
-- (instancetype)initWithHLCStyle:(HLCLoanInputTableViewCellStyle)style reuseIdentifier:reuseIdentifier {
+- (instancetype)initWithHLCStyle:(HLCLoanInputTableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withTag:(NSInteger)tag{
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     
     if (self) {
         
-        CGFloat labelWidth = 100.0;
-        CGFloat labelHeight = 20.0;
-        CGFloat labelOffsetX = 10.0;
+        CGFloat labelWidth = 120.0;
+        CGFloat labelHeight = 28.0;
+        CGFloat labelOffsetX = 20.0;
         CGFloat labelOffsetY = (self.bounds.size.height-labelHeight)*0.5;
         
         // 添加title
@@ -44,33 +47,25 @@
         
         switch (style) {
             case HLCLoanInputTableViewCellStyleTextField: {
-                _textField = [[UITextField alloc] initWithFrame:detailRect];
-                _textField.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-                _textField.textColor = kHLCCellDetailColor;
-                _textField.font = [UIFont systemFontOfSize:kHLCCellDetailFont];
-                _textField.textAlignment = NSTextAlignmentLeft;
+                [self initTextFieldWithFrame:detailRect];
+                _textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+                _textField.delegate = self;
+                _textField.tag = tag;
                 [self.contentView addSubview:_textField];
             }
                 break;
             case HLCLoanInputTableViewCellStyleDatePicker: {
-                _datePicker = [[UIDatePicker alloc] initWithFrame:detailRect];
-                _datePicker.datePickerMode = UIDatePickerModeDate;
                 
-                // 设置时间
-                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-                [dateFormatter setDateFormat:@"yyyy-MM-DD"];
+                // 设置 textField
+                [self initTextFieldWithFrame:detailRect];
+                _textField.font = [UIFont systemFontOfSize:18.0];
+                _textField.delegate = self;
+                _textField.tag = tag;
+                [self.contentView addSubview:_textField];
                 
-                NSString *minDateString = @"1900-01-01";
-                NSDate *minDate = [dateFormatter dateFromString:minDateString];
-                _datePicker.minimumDate = minDate;
-                
-                NSString *maxDateString = @"2099-12-31";
-                NSDate *maxDate = [dateFormatter dateFromString:maxDateString];
-                _datePicker.maximumDate = maxDate;
-                
-                _datePicker.date = [NSDate date];
-                
-                [self.contentView addSubview:_datePicker];
+                // 设置 datePicker
+                [self initDatePicker];
+                _textField.inputView = _datePicker;
             }
                 break;
             case HLCLoanInputTableViewCellStyleSegmentedControl: {
@@ -84,13 +79,134 @@
             default:
                 break;
         }
+        [self initInputAccessoryView];
     }
     
     return self;
 }
 
+#pragma mark - Set Method
+
 - (void)setTitle:(NSString *)title {
     _titleLabel.text = title;
+}
+
+- (void)setPlaceHold:(NSString *)placeHold {
+    _textField.placeholder = placeHold;
+}
+
+- (void)setTextFieldValue:(NSString *)value {
+    _textField.text = value;
+}
+
+#pragma mark - Init Method
+
+- (void)initTextFieldWithFrame:(CGRect)rect {
+    _textField = [[HLCTextField alloc] initWithFrame:rect];
+    _textField.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+    _textField.textColor = kHLCCellDetailColor;
+    _textField.font = [UIFont systemFontOfSize:kHLCCellDetailFont];
+    _textField.textAlignment = NSTextAlignmentLeft;
+    
+    _textField.layer.cornerRadius = 4.0f;
+    _textField.layer.masksToBounds = YES;
+    _textField.layer.borderColor = kHLCCellTextFieldBoardColor.CGColor;
+    _textField.layer.borderWidth = 1.0f;
+    
+    _textField.keyboardType = UIKeyboardTypeDecimalPad;
+}
+
+- (void)initDatePicker {
+    _datePicker = [[UIDatePicker alloc] initWithFrame:CGRectZero];
+    _datePicker.datePickerMode = UIDatePickerModeDate;
+    
+    // 时间格式
+    _dateFormatter = [[NSDateFormatter alloc] init];
+    [_dateFormatter setDateFormat:@"yyyy年MM月"];
+    [_dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"]];
+    
+    // 时间范围
+    NSString *minDateString = @"1900-01-01";
+    NSDate *minDate = [_dateFormatter dateFromString:minDateString];
+    _datePicker.minimumDate = minDate;
+    NSString *maxDateString = @"2099-12-31";
+    NSDate *maxDate = [_dateFormatter dateFromString:maxDateString];
+    _datePicker.maximumDate = maxDate;
+    
+    // 获取当前时间
+    _datePicker.date = [NSDate date];
+    
+    // 设置时间默认值为当前时间
+    _textField.text = [_dateFormatter stringFromDate:_datePicker.date];
+    
+    // 当日期变化时，修改显示的时间
+    [_datePicker addTarget:self action:@selector(dateChanged:) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)initInputAccessoryView {
+    CGFloat toolBarWidth = self.frame.size.width;
+    CGFloat toolBarHeight = 44.0;
+    UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, toolBarWidth, toolBarHeight)];
+    
+    CGFloat buttonWidth = 50.0;
+    CGFloat buttonHeight = 30.0;
+    
+    UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    fixedSpace.width = toolBarWidth - 3*buttonWidth;
+    
+    UIButton *resetButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, buttonWidth, buttonHeight)];
+    [resetButton setTitle:@"重置" forState:UIControlStateNormal];
+    [resetButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [resetButton.layer setMasksToBounds:YES];
+    [resetButton.layer setCornerRadius:5.0];
+    [resetButton.layer setBorderWidth:1.0];
+    [resetButton.layer setBorderColor:[UIColor blueColor].CGColor];
+    [resetButton addTarget:self action:@selector(resetAction:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithCustomView:resetButton];
+    
+    UIButton *calculButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, buttonWidth, buttonHeight)];
+    [calculButton setTitle:@"计算" forState:UIControlStateNormal];
+    [calculButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [calculButton.layer setMasksToBounds:YES];
+    [calculButton.layer setCornerRadius:5.0];
+    [calculButton.layer setBorderWidth:1.0];
+    [calculButton.layer setBorderColor:[UIColor blueColor].CGColor];
+    [calculButton addTarget:self action:@selector(calculateAction:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithCustomView:calculButton];
+    
+    toolBar.items = [NSArray arrayWithObjects:fixedSpace, item1, item2, nil];
+
+    _textField.inputAccessoryView = toolBar;
+}
+
+#pragma maek - UITableViewCell Delegate
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if ([_delegate respondsToSelector:@selector(inputFieldDidEndEditing:)]) {
+        [_delegate inputFieldDidEndEditing:textField];
+    }
+}
+
+#pragma mark - Action Method
+
+- (void)dateChanged:(UIDatePicker *)sender {
+    NSDate *selectedDate = sender.date;
+    NSString *dateString = [self.dateFormatter stringFromDate:selectedDate];
+    self.textField.text = dateString;
+}
+
+- (void)resetAction:(id)sender {
+    [self.textField resignFirstResponder];
+    if ([_delegate respondsToSelector:@selector(resetButtonDidClick:)]) {
+        [_delegate resetButtonDidClick:sender];
+    }
+}
+
+- (void)calculateAction:(UITextField *)textField {
+    [self.textField resignFirstResponder];
+    if ([_delegate respondsToSelector:@selector(calculateButtonDidClick:)]) {
+        [_delegate calculateButtonDidClick:textField];
+    }
 }
 
 @end

@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2902B15C1B78934F0027D13E /* HLCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2902B15B1B78934F0027D13E /* HLCTextField.m */; };
+		291272E41B7DB81B00679251 /* HLCLoanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 291272E31B7DB81B00679251 /* HLCLoanModel.m */; };
 		2933846F1B611E8900D0B455 /* HLCTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2933846E1B611E8900D0B455 /* HLCTableViewCell.m */; };
 		2956D9F71B6920A500E34536 /* HLCSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2956D9F61B6920A500E34536 /* HLCSettingTableViewCell.m */; };
 		2956D9FA1B692A5C00E34536 /* HLCLoanInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2956D9F91B692A5C00E34536 /* HLCLoanInputTableViewCell.m */; };
@@ -38,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2902B15A1B78934F0027D13E /* HLCTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCTextField.h; path = View/HLCTextField.h; sourceTree = "<group>"; };
+		2902B15B1B78934F0027D13E /* HLCTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCTextField.m; path = View/HLCTextField.m; sourceTree = "<group>"; };
+		291272E21B7DB81B00679251 /* HLCLoanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCLoanModel.h; path = Model/HLCLoanModel.h; sourceTree = "<group>"; };
+		291272E31B7DB81B00679251 /* HLCLoanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCLoanModel.m; path = Model/HLCLoanModel.m; sourceTree = "<group>"; };
 		2933846D1B611E8900D0B455 /* HLCTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCTableViewCell.h; path = View/HLCTableViewCell.h; sourceTree = "<group>"; };
 		2933846E1B611E8900D0B455 /* HLCTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCTableViewCell.m; path = View/HLCTableViewCell.m; sourceTree = "<group>"; };
 		2956D9F51B6920A500E34536 /* HLCSettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCSettingTableViewCell.h; path = View/HLCSettingTableViewCell.h; sourceTree = "<group>"; };
@@ -169,6 +175,8 @@
 				2956D9F91B692A5C00E34536 /* HLCLoanInputTableViewCell.m */,
 				2956D9FB1B692A8E00E34536 /* HLCLoanOutputTableViewCell.h */,
 				2956D9FC1B692A8E00E34536 /* HLCLoanOutputTableViewCell.m */,
+				2902B15A1B78934F0027D13E /* HLCTextField.h */,
+				2902B15B1B78934F0027D13E /* HLCTextField.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -176,6 +184,8 @@
 		295B35551B5DDB08006B9A0F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				291272E21B7DB81B00679251 /* HLCLoanModel.h */,
+				291272E31B7DB81B00679251 /* HLCLoanModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -265,7 +275,7 @@
 				};
 			};
 			buildConfigurationList = 295B35201B5DD155006B9A0F /* Build configuration list for PBXProject "HouseLoanCal" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -316,8 +326,10 @@
 				295B35501B5DD4C2006B9A0F /* HLCAppDelegate.m in Sources */,
 				295B35601B5E1A57006B9A0F /* HLCProvidentFundLoanController.m in Sources */,
 				295B352B1B5DD155006B9A0F /* main.m in Sources */,
+				2902B15C1B78934F0027D13E /* HLCTextField.m in Sources */,
 				295B356C1B5E203E006B9A0F /* HLCBaseNavigationController.m in Sources */,
 				295B35631B5E1A74006B9A0F /* HLCCommercialLoanController.m in Sources */,
+				291272E41B7DB81B00679251 /* HLCLoanModel.m in Sources */,
 				295B35661B5E1A87006B9A0F /* HLCMixedLoanController.m in Sources */,
 				295B35691B5E1B02006B9A0F /* HLCSettingController.m in Sources */,
 				2956D9FD1B692A8E00E34536 /* HLCLoanOutputTableViewCell.m in Sources */,
@@ -380,7 +392,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yang Xu (8JG97H3BQR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yang Xu (8JG97H3BQR)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -423,7 +436,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yang Xu (8JG97H3BQR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yang Xu (8JG97H3BQR)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -447,9 +461,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yang Xu (8JG97H3BQR)";
 				INFOPLIST_FILE = HouseLoanCal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -457,9 +474,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yang Xu (8JG97H3BQR)";
 				INFOPLIST_FILE = HouseLoanCal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
