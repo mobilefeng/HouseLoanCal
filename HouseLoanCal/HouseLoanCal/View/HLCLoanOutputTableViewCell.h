@@ -8,6 +8,16 @@
 
 #import "HLCTableViewCell.h"
 
+typedef NS_ENUM(NSInteger, HLCLoanOutputTableViewCellStyle) {
+    HLCLoanOutputTableViewCellStyleLarge,   // 大号字体
+    HLCLoanOutputTableViewCellStyleSmall,   // 小号字体
+};
+
 @interface HLCLoanOutputTableViewCell : HLCTableViewCell
+
+- (instancetype)initWithHLCStyle:(HLCLoanOutputTableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
+
+- (void)setTitle:(NSString *)title;
+- (void)setDetail:(NSString *)detail;
 
 @end

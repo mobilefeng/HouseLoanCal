@@ -44,7 +44,7 @@
 }
 
 - (void)addBottomSeparatorLineLayer {
-    [self addBottomSeparatorLineLayerWithColor:[UIColor blackColor]];
+    [self addBottomSeparatorLineLayerWithColor:kHLCCellBottomLineColor];
 }
 
 - (void)addBottomSeparatorLineLayerWithColor:(UIColor *)aColor {

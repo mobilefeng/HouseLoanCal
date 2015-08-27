@@ -32,7 +32,7 @@
         
         CGFloat labelWidth = 120.0;
         CGFloat labelHeight = 28.0;
-        CGFloat labelOffsetX = 20.0;
+        CGFloat labelOffsetX = 15.0;
         CGFloat labelOffsetY = (self.bounds.size.height-labelHeight)*0.5;
         
         // 添加title
@@ -58,7 +58,7 @@
                 
                 // 设置 textField
                 [self initTextFieldWithFrame:detailRect];
-                _textField.font = [UIFont systemFontOfSize:18.0];
+                _textField.font = [UIFont systemFontOfSize:kHLCCellDetailFont];
                 _textField.delegate = self;
                 _textField.tag = tag;
                 [self.contentView addSubview:_textField];
@@ -73,6 +73,7 @@
                 _segmentedControl = [[UISegmentedControl alloc] initWithItems:segmentedArray];
                 _segmentedControl.frame = detailRect;
                 _segmentedControl.selectedSegmentIndex = 0;
+                [_segmentedControl addTarget:self action:@selector(segmentedControlAction:) forControlEvents:UIControlEventValueChanged];
                 [self.contentView addSubview:_segmentedControl];
             }
                 break;
@@ -206,6 +207,12 @@
     [self.textField resignFirstResponder];
     if ([_delegate respondsToSelector:@selector(calculateButtonDidClick:)]) {
         [_delegate calculateButtonDidClick:textField];
+    }
+}
+
+- (void)segmentedControlAction:(UISegmentedControl *)segmentedControl {
+    if ([_delegate respondsToSelector:@selector(segmentedControlDidChange:)]) {
+        [_delegate segmentedControlDidChange:segmentedControl];
     }
 }
 

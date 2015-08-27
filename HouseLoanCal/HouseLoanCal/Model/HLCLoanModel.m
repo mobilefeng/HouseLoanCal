@@ -18,6 +18,8 @@
 @property (nonatomic, strong, readwrite) NSNumber *cumulativePrincipalPlusInterest;
 // 还款期数
 @property (nonatomic, assign, readwrite) NSInteger monthOfLoan;
+// 还款月份
+@property (nonatomic, strong, readwrite) NSMutableArray *eachMonth;
 // 每期本金
 @property (nonatomic, strong, readwrite) NSMutableArray *eachPrincipal;
 // 每期利息
@@ -49,6 +51,13 @@
         _loanDate = date;
         _loanRate = rate;
         _loanType = type;
+        
+        _cumulativeInterest = [[NSNumber alloc] init];
+        _cumulativePrincipalPlusInterest = [[NSNumber alloc] init];
+        _eachMonth = [[NSMutableArray alloc] init];
+        _eachPrincipal = [[NSMutableArray alloc] init];
+        _eachInterest = [[NSMutableArray alloc] init];
+        _eachPrincipalPlusInterest = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -67,14 +76,23 @@
     NSNumber *interestPerMonth = [NSNumber alloc];
     NSNumber *principalPerMonth = [NSNumber alloc];
     
+    for (int i=0; i<self.monthOfLoan; i++) {
+        NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+        [dateComponents setMonth:i];
+        NSDate *monthDate = [calendar dateByAddingComponents:dateComponents toDate:self.loanDate options:0];
+        [self.eachMonth insertObject:monthDate atIndex:i];
+    }
+    
     switch (self.loanType) {
         // 等额本息
         case HLCLoanTypeEqualPrincipalPlusInterest: {
             for (int i=0; i<self.monthOfLoan; i++) {
                 // 每月本息
+                double powVar = pow(1+monthRate, (double)self.monthOfLoan);
                 prinIntePerMonth = [NSNumber numberWithDouble:(principalInTenThousand
-                                                                         * (monthRate * pow(1+monthRate, self.monthOfLoan))
-                                                                         / (pow(1+monthRate, self.monthOfLoan)-1))];
+                                                               * (monthRate * powVar)
+                                                               / (powVar-1))];
                 [self.eachPrincipalPlusInterest insertObject:prinIntePerMonth atIndex:i];
                 
                 // 每月利息
@@ -127,7 +145,7 @@
     self.cumulativeInterest = [NSNumber numberWithDouble:interestTotal];
     
     // 累计支付总额
-    self.cumulativePrincipalPlusInterest = [NSNumber numberWithDouble:(self.loanPrincipal.doubleValue+self.cumulativeInterest.doubleValue)];
+    self.cumulativePrincipalPlusInterest = [NSNumber numberWithDouble:(principalInTenThousand+self.cumulativeInterest.doubleValue)];
 }
 
 @end

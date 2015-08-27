@@ -46,6 +46,19 @@ enum {
     kHLCProfundSummaryCount,
 };
 
+/*
+ *  Row of Output Detail Section
+ */
+enum {
+    // 每期相同
+    kHLCProfundDetailEveryMonthEqual = 0,
+    
+    // 期数
+    kHLCProfundDetailTitle,
+    
+    //
+    kHLCProfundDetailCount,
+};
 
 @interface HLCProvidentFundLoanController : HLCLoanController
 

@@ -40,4 +40,6 @@ typedef NS_ENUM(NSInteger, HLCLoanInputTableViewCellStyle) {
 
 - (void)inputFieldDidEndEditing:(UITextField *)textField;
 
+- (void)segmentedControlDidChange:(UISegmentedControl *)segmentedControl;
+
 @end

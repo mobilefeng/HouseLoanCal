@@ -45,6 +45,8 @@
 // Cell TextField 边框颜色
 #define kHLCCellTextFieldBoardColor (UIColorFromRGB(0xD6D6D6))
 
+// Cell Bottom Line 颜色
+#define kHLCCellBottomLineColor     (UIColorFromRGB(0xA6A6A6))
 
 // ___________________________________________________________
 //
@@ -58,11 +60,22 @@
 // Cell 详情字体
 #define kHLCCellDetailFont          (16.0)
 
+// Cell 标题字体（小号）
+#define kHLCCellTitleSmallFont       (14.0)
+
+// Cell 详情字体（小号）
+#define kHLCCellDetailSmallFont     (14.0)
+
 
 // ___________________________________________________________
 //
 
-// cell 高度
+// Cell 高度
 #define kHLCHeightForCell           (44.0)
+
+// Cell Header 高度
+#define kHLCHeightForCellHeader     (16.0)
+
+
 
 #endif
