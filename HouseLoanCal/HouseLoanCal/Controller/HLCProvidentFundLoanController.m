@@ -15,6 +15,8 @@
 #import "HLCLoanOutputTableViewCell.h"
 #import "HLCLoanModel.h"
 
+#import <objc/runtime.h>
+
 @interface HLCProvidentFundLoanController() <HLCLoanInputTableViewCellDelegate>
 
 // 输入参数
@@ -300,15 +302,21 @@
 
 #pragma mark - InputCell Delegate
 
+// 重置按钮被点击后的操作
 - (void)resetButtonDidClick:(UIButton *)button {
+    [self resetAndReloadDate];
+}
+
+- (void)resetAndReloadDate {
     
 }
 
+// 计算按钮被点击后的操作
 - (void)calculateButtonDidClick:(UIButton *)button {
-    [self calculateAndShowResult];
+    [self calculateAndReloadDate];
 }
 
-- (void)calculateAndShowResult {
+- (void)calculateAndReloadDate {
     if (self.loanPrincipal && self.loanPeriod && self.loanDate && self.loanRate.doubleValue!=0.0 && self.loanType) {
         HLCLoanModel *loanModel = [[HLCLoanModel alloc] initWithPrincipal:self.loanPrincipal
                                                                    period:self.loanPeriod
@@ -345,6 +353,7 @@
     }
 }
 
+// 获取 textField 输入值
 - (void)inputFieldDidEndEditing:(UITextField *)textField {
     switch (textField.tag) {
         case 1000: {
@@ -377,6 +386,8 @@
     return date;
 }
 
+
+// 获取 segmentedControl 的值
 - (void)segmentedControlDidChange:(UISegmentedControl *)segmentedControl {
     NSInteger index = segmentedControl.selectedSegmentIndex;
     
@@ -391,7 +402,7 @@
         default:
             break;
     }
-    [self calculateAndShowResult];
+    [self calculateAndReloadDate];
 }
 
 @end

@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, HLCLoanInputTableViewCellStyle) {
 
 @interface HLCLoanInputTableViewCell : HLCTableViewCell
 
-@property (weak)id <HLCLoanInputTableViewCellDelegate>delegate;
+@property (nonatomic, weak)id <HLCLoanInputTableViewCellDelegate>delegate;
 
 - (instancetype)initWithHLCStyle:(HLCLoanInputTableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withTag:(NSInteger)tag;
 

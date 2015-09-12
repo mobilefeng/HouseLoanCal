@@ -31,6 +31,8 @@
 
 @implementation HLCLoanModel
 
+@synthesize cumulativeInterest;
+
 + (instancetype)sharedInstance {
     static id _sharedInstance = nil;
     static dispatch_once_t oncePredicate;
@@ -42,7 +44,11 @@
     return _sharedInstance;
 }
 
-- (id)initWithPrincipal:(NSNumber *)pricipal period:(NSInteger)period date:(NSDate *)date rate:(NSNumber *)rate withType:(HLCLoanType)type {
+- (id)initWithPrincipal:(NSNumber *)pricipal
+                 period:(NSInteger)period
+                   date:(NSDate *)date
+                   rate:(NSNumber *)rate
+               withType:(HLCLoanType)type {
     self = [super init];
     
     if (self) {
@@ -52,7 +58,7 @@
         _loanRate = rate;
         _loanType = type;
         
-        _cumulativeInterest = [[NSNumber alloc] init];
+        self.cumulativeInterest = [[NSNumber alloc] init];
         _cumulativePrincipalPlusInterest = [[NSNumber alloc] init];
         _eachMonth = [[NSMutableArray alloc] init];
         _eachPrincipal = [[NSMutableArray alloc] init];
@@ -64,8 +70,17 @@
 }
 
 - (id)init {
-    return [self initWithPrincipal:[NSNumber numberWithDouble:0.0] period:0 date:[NSDate date] rate:[NSNumber numberWithDouble:3.5] withType:HLCLoanTypeEqualPrincipal];
+    return [self initWithPrincipal:[NSNumber numberWithDouble:0.0] period:0 date:[NSDate date] rate:[NSNumber numberWithDouble:5.0] withType:HLCLoanTypeEqualPrincipal];
 }
+
+- (NSNumber *)cumulativeInterest {
+    return cumulativeInterest;
+}
+
+- (void)setCumulativeInterest:(NSNumber *)newCumulativeInterest {
+    cumulativeInterest = newCumulativeInterest;
+}
+
 
 - (void)calculate {
     self.monthOfLoan = self.loanPeriod * 12;

@@ -121,7 +121,6 @@
 		295B35271B5DD155006B9A0F /* HouseLoanCal */ = {
 			isa = PBXGroup;
 			children = (
-				295B356D1B5E27A6006B9A0F /* Category */,
 				295B35561B5DDB0F006B9A0F /* Controller */,
 				295B35551B5DDB08006B9A0F /* Model */,
 				295B35541B5DDAFF006B9A0F /* View */,
@@ -209,13 +208,6 @@
 				295B35681B5E1B02006B9A0F /* HLCSettingController.m */,
 			);
 			name = Controller;
-			sourceTree = "<group>";
-		};
-		295B356D1B5E27A6006B9A0F /* Category */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
