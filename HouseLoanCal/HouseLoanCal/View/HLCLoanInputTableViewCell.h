@@ -25,6 +25,7 @@ typedef NS_ENUM(NSInteger, HLCLoanInputTableViewCellStyle) {
 - (void)setTitle:(NSString *)title;
 - (void)setPlaceHold:(NSString *)placeHold;
 - (void)setTextFieldValue:(NSString *)value;
+- (void)setTextFieldBlank;
 
 @end
 

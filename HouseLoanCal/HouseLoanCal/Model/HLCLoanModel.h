@@ -28,25 +28,27 @@ typedef NS_ENUM(NSInteger, HLCLoanType) {
                    rate:(NSNumber *)rate
                withType:(HLCLoanType)type;
 
+- (BOOL)isInputValid;
+
 - (void)calculate;
 
-
-//___________________________________________________
-//
+/*
+ *  输入参数
+ */
 // 贷款金额
-@property (nonatomic, strong, readonly) NSNumber *loanPrincipal;
+@property (nonatomic, strong) NSNumber *loanPrincipal;
 // 贷款期限
-@property (nonatomic, assign, readonly) NSInteger loanPeriod;
+@property (nonatomic, assign) NSInteger loanPeriod;
 // 贷款日期
-@property (nonatomic, strong, readonly) NSDate *loanDate;
+@property (nonatomic, strong) NSDate *loanDate;
 // 贷款利率
-@property (nonatomic, strong, readonly) NSNumber *loanRate;
+@property (nonatomic, strong) NSNumber *loanRate;
 // 还款方式
-@property (nonatomic, assign, readonly) HLCLoanType loanType;
+@property (nonatomic, assign) HLCLoanType loanType;
 
-
-//___________________________________________________
-//
+/*
+ *  输出参数
+ */
 // 累计支付利息
 @property (nonatomic, strong, readonly) NSNumber *cumulativeInterest;
 // 累计还款总额
@@ -61,6 +63,10 @@ typedef NS_ENUM(NSInteger, HLCLoanType) {
 @property (nonatomic, strong, readonly) NSMutableArray *eachInterest;
 // 每期本息
 @property (nonatomic, strong, readonly) NSMutableArray *eachPrincipalPlusInterest;
+// 每期相同
+@property (nonatomic, strong, readonly) NSNumber *eachEqual;
+// 每期不同
+@property (nonatomic, strong, readonly) NSMutableArray *eachDiff;
 
 
 @end

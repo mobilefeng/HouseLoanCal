@@ -55,7 +55,6 @@
             }
                 break;
             case HLCLoanInputTableViewCellStyleDatePicker: {
-                
                 // 设置 textField
                 [self initTextFieldWithFrame:detailRect];
                 _textField.font = [UIFont systemFontOfSize:kHLCCellDetailFont];
@@ -98,6 +97,10 @@
 
 - (void)setTextFieldValue:(NSString *)value {
     _textField.text = value;
+}
+
+- (void)setTextFieldBlank {
+    _textField.text = nil;
 }
 
 #pragma mark - Init Method
@@ -152,9 +155,11 @@
     CGFloat buttonWidth = 50.0;
     CGFloat buttonHeight = 30.0;
     
+    // 空白区域，用于讲两个按钮挤到右侧
     UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     fixedSpace.width = toolBarWidth - 3*buttonWidth;
     
+    // 重置按钮
     UIButton *resetButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, buttonWidth, buttonHeight)];
     [resetButton setTitle:@"重置" forState:UIControlStateNormal];
     [resetButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
@@ -165,6 +170,7 @@
     [resetButton addTarget:self action:@selector(resetAction:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithCustomView:resetButton];
     
+    // 计算按钮
     UIButton *calculButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, buttonWidth, buttonHeight)];
     [calculButton setTitle:@"计算" forState:UIControlStateNormal];
     [calculButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
@@ -175,7 +181,13 @@
     [calculButton addTarget:self action:@selector(calculateAction:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithCustomView:calculButton];
     
+    // 将几个控件塞进 toolBar
     toolBar.items = [NSArray arrayWithObjects:fixedSpace, item1, item2, nil];
+    
+    // toolBar 底部加条分割线
+    UIView *bottomLine = [[UIView alloc] initWithFrame:CGRectMake(0, toolBarHeight-0.5, toolBarWidth, 0.5)];
+    bottomLine.backgroundColor = kHLCToolBarBottomLineColor;
+    [toolBar addSubview:bottomLine];
 
     _textField.inputAccessoryView = toolBar;
 }

@@ -48,6 +48,9 @@
 // Cell Bottom Line 颜色
 #define kHLCCellBottomLineColor     (UIColorFromRGB(0xA6A6A6))
 
+// ToolBar Bottom Line 颜色
+#define kHLCToolBarBottomLineColor  (UIColorFromRGB(0xA6A6A6))
+
 // ___________________________________________________________
 //
 

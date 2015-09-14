@@ -17,7 +17,6 @@
         leftView.backgroundColor = [UIColor clearColor];
         self.leftView = leftView;
         self.leftViewMode = UITextFieldViewModeAlways;
-        
     }
     return self;
 }

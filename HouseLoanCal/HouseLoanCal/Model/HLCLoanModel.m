@@ -26,6 +26,10 @@
 @property (nonatomic, strong, readwrite) NSMutableArray *eachInterest;
 // 每期本息
 @property (nonatomic, strong, readwrite) NSMutableArray *eachPrincipalPlusInterest;
+// 每期相同
+@property (nonatomic, strong, readwrite) NSNumber *eachEqual;
+// 每期不同
+@property (nonatomic, strong, readwrite) NSMutableArray *eachDiff;
 
 @end
 
@@ -82,6 +86,10 @@
 }
 
 
+- (BOOL)isInputValid {
+    return (self.loanPrincipal && self.loanPeriod && self.loanDate && self.loanRate.doubleValue!=0.0 && self.loanType);
+}
+
 - (void)calculate {
     self.monthOfLoan = self.loanPeriod * 12;
     double monthRate = self.loanRate.doubleValue / (12*100);
@@ -123,6 +131,9 @@
                 principalPerMonth = [NSNumber numberWithDouble:(prinIntePerMonth.doubleValue - interestPerMonth.doubleValue)];
                 [self.eachPrincipal insertObject:principalPerMonth atIndex:i];
             }
+            // 每月相同和不同
+            self.eachEqual = self.eachPrincipalPlusInterest[0];
+            self.eachDiff = self.eachPrincipal;
         }
             break;
         // 等额本金
@@ -145,6 +156,9 @@
                 prinIntePerMonth = [NSNumber numberWithDouble:(principalPerMonth.doubleValue + interestPerMonth.doubleValue)];
                 [self.eachPrincipalPlusInterest insertObject:prinIntePerMonth atIndex:i];
             }
+            // 每月相同和不同
+            self.eachEqual = self.eachPrincipal[0];
+            self.eachDiff = self.eachPrincipalPlusInterest;
         }
             break;
         default:

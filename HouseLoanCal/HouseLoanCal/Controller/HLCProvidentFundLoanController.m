@@ -8,38 +8,31 @@
 
 #import "HLCProvidentFundLoanController.h"
 
-//
+// Macro
 #import "HLCMacros.h"
 
+// View
 #import "HLCLoanInputTableViewCell.h"
 #import "HLCLoanOutputTableViewCell.h"
+
+// Model
 #import "HLCLoanModel.h"
 
-#import <objc/runtime.h>
 
 @interface HLCProvidentFundLoanController() <HLCLoanInputTableViewCellDelegate>
 
-// 输入参数
-@property (nonatomic, strong) NSNumber *loanPrincipal;
-@property (nonatomic, assign) NSInteger loanPeriod;
-@property (nonatomic, strong) NSDate *loanDate;
-@property (nonatomic, strong) NSNumber *loanRate;
-@property (nonatomic, assign) HLCLoanType loanType;
+// 数据模型
+@property (nonatomic, retain) HLCLoanModel *loanModel;
 
-// 输出结果
-@property (nonatomic, strong) NSNumber *cumulativeInterest;
-@property (nonatomic, strong) NSNumber *cumulativePrincipalPlusInterest;
-@property (nonatomic, strong) NSMutableArray *everyMonth;
-@property (nonatomic, strong) NSNumber *everyMonthEqual;
-@property (nonatomic, strong) NSMutableArray *everyMonthDiff;
-@property (nonatomic, strong) NSMutableArray *everyMonthInterest;
-
-//
+// 控制是否显示输出结果
 @property (nonatomic, assign) BOOL isShowOutput;
 
 @end
 
+
 @implementation HLCProvidentFundLoanController
+
+#pragma mark - Init
 
 - (instancetype)initViewController {
     if (self = [super initViewController]) {
@@ -47,17 +40,19 @@
         UIImage *tabSelectImage = [UIImage imageNamed:@"icon_profund_height"];
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"公积金贷款" image:tabImage selectedImage:tabSelectImage];
         
-        // 初始化时不显示输出结果Section
+        self.loanModel = [HLCLoanModel sharedInstance];
+        
+        // 初始化时不显示输出结果
         self.isShowOutput = NO;
         
         // 初始化贷款利率
-        self.loanRate = [NSNumber numberWithDouble:5.0];
+        self.loanModel.loanRate = [NSNumber numberWithDouble:3.25];
         
         // 初始化还款方式
-        self.loanType = HLCLoanTypeEqualPrincipalPlusInterest;
+        self.loanModel.loanType = HLCLoanTypeEqualPrincipalPlusInterest;
         
         // 初始化还款时间
-        self.loanDate = [NSDate date];
+        self.loanModel.loanDate = [NSDate date];
     }
     return self;
 }
@@ -95,7 +90,7 @@
             break;
         case kHLCLoanSectionOutputDetail: {
             if (self.isShowOutput) {
-                numOfRows = [self.everyMonthInterest count] + kHLCProfundDetailCount;
+                numOfRows = [self.loanModel.eachInterest count] + kHLCProfundDetailCount;
             }
         }
             break;
@@ -135,6 +130,9 @@
                         cell = [[HLCLoanInputTableViewCell alloc] initWithHLCStyle:HLCLoanInputTableViewCellStyleTextField reuseIdentifier:cellIdentifier withTag:1000];
                     }
                     [cell setTitle:@"贷款金额(万)"];
+                    if (self.loanModel.loanPrincipal == nil) {
+                        [cell setTextFieldBlank];
+                    }
                     cell.delegate = self;
                     return cell;
                 }
@@ -146,6 +144,9 @@
                         cell = [[HLCLoanInputTableViewCell alloc] initWithHLCStyle:HLCLoanInputTableViewCellStyleTextField reuseIdentifier:cellIdentifier withTag:1001];
                     }
                     [cell setTitle:@"贷款期限(年)"];
+                    if (self.loanModel.loanPeriod <= 0) {
+                        [cell setTextFieldBlank];
+                    }
                     cell.delegate = self;
                     return cell;
                 }
@@ -168,7 +169,7 @@
                         cell = [[HLCLoanInputTableViewCell alloc] initWithHLCStyle:HLCLoanInputTableViewCellStyleTextField reuseIdentifier:cellIdentifier withTag:1003];
                     }
                     [cell setTitle:@"贷款利率(％)"];
-                    [cell setTextFieldValue:[NSString stringWithFormat:@"%.3f", [self.loanRate doubleValue]]];
+                    [cell setTextFieldValue:[NSString stringWithFormat:@"%.3f", [self.loanModel.loanRate doubleValue]]];
                     cell.delegate = self;
                     return cell;
                 }
@@ -200,7 +201,7 @@
                             cell = [[HLCLoanOutputTableViewCell alloc] initWithHLCStyle:HLCLoanOutputTableViewCellStyleLarge reuseIdentifier:cellIdentifier];
                         }
                         [cell setTitle:@"累计支付利息(元)"];
-                        [cell setDetail:[moneyFormatter stringFromNumber:self.cumulativeInterest]];
+                        [cell setDetail:[moneyFormatter stringFromNumber:self.loanModel.cumulativeInterest]];
                         return cell;
                     }
                         break;
@@ -211,7 +212,7 @@
                             cell = [[HLCLoanOutputTableViewCell alloc] initWithHLCStyle:HLCLoanOutputTableViewCellStyleLarge reuseIdentifier:cellIdentifier];
                         }
                         [cell setTitle:@"累计还款总额(元)"];
-                        [cell setDetail:[moneyFormatter stringFromNumber:self.cumulativePrincipalPlusInterest]];
+                        [cell setDetail:[moneyFormatter stringFromNumber:self.loanModel.cumulativePrincipalPlusInterest]];
                         return cell;
                     }
                         break;
@@ -230,7 +231,7 @@
                     if (!cell) {
                         cell = [[HLCLoanOutputTableViewCell alloc] initWithHLCStyle:HLCLoanOutputTableViewCellStyleLarge reuseIdentifier:cellIdentifier];
                     }
-                    switch (self.loanType) {
+                    switch (self.loanModel.loanType) {
                         case HLCLoanTypeEqualPrincipalPlusInterest: {
                             [cell setTitle:@"每期还款(元)"];
                         }
@@ -242,7 +243,7 @@
                         default:
                             break;
                     }
-                    [cell setDetail:[moneyFormatter stringFromNumber:self.everyMonthEqual]];
+                    [cell setDetail:[moneyFormatter stringFromNumber:self.loanModel.eachEqual]];
                     return cell;
                 } else if (kHLCProfundDetailTitle == row) {
                     static NSString *cellIdentifier = @"OutputDetailTitleCellIdentifier";
@@ -251,7 +252,7 @@
                         cell = [[HLCLoanOutputTableViewCell alloc] initWithHLCStyle:HLCLoanOutputTableViewCellStyleLarge reuseIdentifier:cellIdentifier];
                     }
                     [cell setTitle:@"期数"];
-                    switch (self.loanType) {
+                    switch (self.loanModel.loanType) {
                         case HLCLoanTypeEqualPrincipalPlusInterest: {
                             [cell setDetail:@"本金/利息(元)"];
                         }
@@ -270,10 +271,10 @@
                     if (!cell) {
                         cell = [[HLCLoanOutputTableViewCell alloc] initWithHLCStyle:HLCLoanOutputTableViewCellStyleSmall reuseIdentifier:cellIdentifier];
                     }
-                    [cell setTitle:[NSString stringWithFormat:@"第%ld期[%@]", row-1, [dateFormatter stringFromDate:self.everyMonth[row-2]]]];
-                    NSString *everyMonthDiffString = [moneyFormatter stringFromNumber:self.everyMonthDiff[row-2]];
-                    NSString *evertMonthInterestString = [moneyFormatter stringFromNumber:self.everyMonthInterest[row-2]];
-                    [cell setDetail:[NSString stringWithFormat:@"%@/%@", everyMonthDiffString, evertMonthInterestString]];
+                    [cell setTitle:[NSString stringWithFormat:@"第%ld期[%@]", row-1, [dateFormatter stringFromDate:self.loanModel.eachMonth[row-2]]]];
+                    NSString *everyMonthDiffString = [moneyFormatter stringFromNumber:self.loanModel.eachDiff[row-2]];
+                    NSString *everyMonthInterestString = [moneyFormatter stringFromNumber:self.loanModel.eachInterest[row-2]];
+                    [cell setDetail:[NSString stringWithFormat:@"%@/%@", everyMonthDiffString, everyMonthInterestString]];
                     return cell;
                 }
             }
@@ -287,11 +288,16 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return kHLCHeightForCellHeader;
+    if (section == kHLCLoanSectionInput) {
+        return 0;
+    } else {
+        return kHLCHeightForCellHeader;
+    }
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, kHLCHeightForCellHeader)];
+    headerView.backgroundColor = kHLCBackgroundColor;
     
     UIView *bottomLine = [[UIView alloc] initWithFrame:CGRectMake(0, kHLCHeightForCellHeader-0.5, self.tableView.frame.size.width, 0.5)];
     bottomLine.backgroundColor = kHLCCellBottomLineColor;
@@ -307,44 +313,66 @@
     [self resetAndReloadDate];
 }
 
-- (void)resetAndReloadDate {
-    
-}
-
 // 计算按钮被点击后的操作
 - (void)calculateButtonDidClick:(UIButton *)button {
     [self calculateAndReloadDate];
 }
 
-- (void)calculateAndReloadDate {
-    if (self.loanPrincipal && self.loanPeriod && self.loanDate && self.loanRate.doubleValue!=0.0 && self.loanType) {
-        HLCLoanModel *loanModel = [[HLCLoanModel alloc] initWithPrincipal:self.loanPrincipal
-                                                                   period:self.loanPeriod
-                                                                     date:self.loanDate
-                                                                     rate:self.loanRate
-                                                                 withType:self.loanType];
-        [loanModel calculate];
-        
-        switch (self.loanType) {
-            case HLCLoanTypeEqualPrincipalPlusInterest: {
-                self.everyMonthEqual = loanModel.eachPrincipalPlusInterest[0];
-                self.everyMonthDiff = loanModel.eachPrincipal;
-            }
-                break;
-            case HLCLoanTypeEqualPrincipal: {
-                self.everyMonthEqual = loanModel.eachPrincipal[0];
-                self.everyMonthDiff = loanModel.eachPrincipalPlusInterest;
-            }
-                break;
-            default:
-                break;
+// 获取 textField 输入值
+- (void)inputFieldDidEndEditing:(UITextField *)textField {
+    switch (textField.tag) {
+        case 1000: {
+            self.loanModel.loanPrincipal = [NSNumber numberWithFloat:[textField.text floatValue]];
         }
-        
-        self.everyMonth = loanModel.eachMonth;
-        self.everyMonthInterest = loanModel.eachInterest;
-        self.cumulativeInterest = loanModel.cumulativeInterest;
-        self.cumulativePrincipalPlusInterest = loanModel.cumulativePrincipalPlusInterest;
-        
+            break;
+        case 1001: {
+            self.loanModel.loanPeriod = [textField.text intValue];
+        }
+            break;
+        case 1002: {
+            self.loanModel.loanDate = [self convertDateFromString:textField.text];
+        }
+            break;
+        case 1003: {
+            self.loanModel.loanRate = [NSNumber numberWithFloat:[textField.text floatValue]];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+// 获取 segmentedControl 的值
+- (void)segmentedControlDidChange:(UISegmentedControl *)segmentedControl {
+    NSInteger index = segmentedControl.selectedSegmentIndex;
+    
+    switch (index) {
+        case 0: {
+            self.loanModel.loanType = HLCLoanTypeEqualPrincipalPlusInterest;
+        }
+            break;
+        case 1: {
+            self.loanModel.loanType = HLCLoanTypeEqualPrincipal;
+        }
+        default:
+            break;
+    }
+    [self calculateAndReloadDate];
+}
+
+#pragma mark - Action
+
+- (void)resetAndReloadDate {
+    self.isShowOutput = NO;
+    self.loanModel.loanPrincipal = nil;
+    self.loanModel.loanPeriod = 0;
+    
+    [self.tableView reloadData];
+}
+
+- (void)calculateAndReloadDate {
+    if (self.loanModel.isInputValid) {
+        [self.loanModel calculate];
         self.isShowOutput = YES;
         [self.tableView reloadData];
     } else {
@@ -353,29 +381,7 @@
     }
 }
 
-// 获取 textField 输入值
-- (void)inputFieldDidEndEditing:(UITextField *)textField {
-    switch (textField.tag) {
-        case 1000: {
-            self.loanPrincipal = [NSNumber numberWithFloat:[textField.text floatValue]];
-        }
-            break;
-        case 1001: {
-            self.loanPeriod = [textField.text intValue];
-        }
-            break;
-        case 1002: {
-            self.loanDate = [self convertDateFromString:textField.text];
-        }
-            break;
-        case 1003: {
-            self.loanRate = [NSNumber numberWithFloat:[textField.text floatValue]];
-        }
-            break;
-        default:
-            break;
-    }
-}
+#pragma mark - Method
 
 - (NSDate *)convertDateFromString:(NSString *)string {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -384,25 +390,6 @@
     
     NSDate *date = [dateFormatter dateFromString:string];
     return date;
-}
-
-
-// 获取 segmentedControl 的值
-- (void)segmentedControlDidChange:(UISegmentedControl *)segmentedControl {
-    NSInteger index = segmentedControl.selectedSegmentIndex;
-    
-    switch (index) {
-        case 0: {
-            self.loanType = HLCLoanTypeEqualPrincipalPlusInterest;
-        }
-            break;
-        case 1: {
-            self.loanType = HLCLoanTypeEqualPrincipal;
-        }
-        default:
-            break;
-    }
-    [self calculateAndReloadDate];
 }
 
 @end
