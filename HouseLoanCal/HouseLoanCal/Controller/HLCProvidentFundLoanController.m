@@ -311,12 +311,12 @@
 
 // 重置按钮被点击后的操作
 - (void)resetButtonDidClick:(UIButton *)button {
-    [self resetAndReloadDate];
+    [self resetAndReloadData];
 }
 
 // 计算按钮被点击后的操作
 - (void)calculateButtonDidClick:(UIButton *)button {
-    [self calculateAndReloadDate];
+    [self calculateAndReloadData];
 }
 
 // 获取 textField 输入值
@@ -359,13 +359,13 @@
             break;
     }
     if (self.loanModel.isInputValid && self.isShowOutput) {
-        [self calculateAndReloadDate];
+        [self calculateAndReloadData];
     }
 }
 
 #pragma mark - Action
 
-- (void)resetAndReloadDate {
+- (void)resetAndReloadData {
     self.isShowOutput = NO;
     self.loanModel.loanPrincipal = nil;
     self.loanModel.loanPeriod = 0;
@@ -373,7 +373,7 @@
     [self.tableView reloadData];
 }
 
-- (void)calculateAndReloadDate {
+- (void)calculateAndReloadData {
     if (self.loanModel.isInputValid) {
         [self.loanModel calculate];
         self.isShowOutput = YES;

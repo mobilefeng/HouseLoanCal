@@ -17,23 +17,23 @@ enum {
     // 公积金贷款金额
     kHLCMixedInputProfundValue = 0,
     
-    // 公积金贷款利率
-    kHLCMixedInputProfundRate,
-    
     // 商业贷款金额
     kHLCMixedInputCommerValue,
-    
-    // 商业贷款利率
-    kHLCMixedInputCommerRate,
-    
-    // 商业贷款利率折扣
-    kHLCMixedInputCommerDiscount,
     
     // 贷款期限
     kHLCMixedInputPeriod,
     
     // 还款日期
     kHLCMixedInputDate,
+    
+    // 公积金贷款利率
+    kHLCMixedInputProfundRate,
+    
+    // 商业贷款利率
+    kHLCMixedInputCommerRate,
+    
+    // 商业贷款利率折扣
+    kHLCMixedInputCommerDiscount,
     
     // 还款方式
     kHLCMixedInputType,
@@ -46,9 +46,6 @@ enum {
  *  Row of Output Summary Section
  */
 enum {
-    // 商业贷款折扣利率
-    kHLCMixedEquivalentRate = 0,
-    
     // 累计支付利息
     kHLCMixedSummaryAccuInterest,
     

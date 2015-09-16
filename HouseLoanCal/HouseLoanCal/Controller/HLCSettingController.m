@@ -65,7 +65,7 @@
             if (!cell) {
                 cell = [[HLCSettingTableViewCell alloc] initWithHLCStyle:(HLCSettingTableViewCellStyleAccessory) reuseIdentifier:scoreCellIndentifier];
             }
-            [cell setTitle:@"评分"];
+            [cell setTitle:@"给五星好评"];
             
             return cell;
         }

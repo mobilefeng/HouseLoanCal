@@ -85,7 +85,6 @@
     cumulativeInterest = newCumulativeInterest;
 }
 
-
 - (BOOL)isInputValid {
     return (self.loanPrincipal.doubleValue>0.0 && self.loanPeriod>0 && self.loanDate && self.loanRate.doubleValue!=0.0 && self.loanType);
 }
