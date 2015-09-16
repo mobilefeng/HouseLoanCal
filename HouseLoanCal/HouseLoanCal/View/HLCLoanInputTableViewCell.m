@@ -30,20 +30,27 @@
     
     if (self) {
         
-        CGFloat labelWidth = 120.0;
-        CGFloat labelHeight = 28.0;
-        CGFloat labelOffsetX = 15.0;
-        CGFloat labelOffsetY = (self.bounds.size.height-labelHeight)*0.5;
+        // Title Frame
+        CGFloat titleWidth = 170.0;
+        CGFloat titleHeight = 28.0;
+        CGFloat titleOffsetX = 15.0;
+        CGFloat titleOffsetY = (self.bounds.size.height-titleHeight)*0.5;
         
-        // 添加title
-        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(labelOffsetX, labelOffsetY, labelWidth, labelHeight)];
+        // 添加 Title
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(titleOffsetX, titleOffsetY, titleWidth, titleHeight)];
         _titleLabel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
         _titleLabel.textColor = kHLCCellTitleColor;
         _titleLabel.font = [UIFont systemFontOfSize:kHLCCellTitleFont];
         _titleLabel.textAlignment = NSTextAlignmentLeft;
         [self.contentView addSubview:_titleLabel];
         
-        CGRect detailRect = CGRectMake(self.bounds.size.width-labelOffsetX-labelWidth, labelOffsetY, labelWidth, labelHeight);
+        // Detail Frame
+        CGFloat detailWidth = self.bounds.size.width - titleWidth - 2*titleOffsetX;
+        CGFloat detailHeight = titleHeight;
+        CGFloat detailOffsetX = titleOffsetX + titleWidth;
+        CGFloat detailOffsetY = titleOffsetY;
+        
+        CGRect detailRect = CGRectMake(detailOffsetX, detailOffsetY, detailWidth, detailHeight);
         
         switch (style) {
             case HLCLoanInputTableViewCellStyleTextField: {
@@ -51,6 +58,7 @@
                 _textField.clearButtonMode = UITextFieldViewModeWhileEditing;
                 _textField.delegate = self;
                 _textField.tag = tag;
+                _textField.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin;
                 [self.contentView addSubview:_textField];
             }
                 break;
@@ -60,6 +68,7 @@
                 _textField.font = [UIFont systemFontOfSize:kHLCCellDetailFont];
                 _textField.delegate = self;
                 _textField.tag = tag;
+                _textField.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin;
                 [self.contentView addSubview:_textField];
                 
                 // 设置 datePicker
@@ -72,6 +81,7 @@
                 _segmentedControl = [[UISegmentedControl alloc] initWithItems:segmentedArray];
                 _segmentedControl.frame = detailRect;
                 _segmentedControl.selectedSegmentIndex = 0;
+                _segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin;
                 [_segmentedControl addTarget:self action:@selector(segmentedControlAction:) forControlEvents:UIControlEventValueChanged];
                 [self.contentView addSubview:_segmentedControl];
             }
@@ -148,7 +158,7 @@
 }
 
 - (void)initInputAccessoryView {
-    CGFloat toolBarWidth = self.frame.size.width;
+    CGFloat toolBarWidth = [UIScreen mainScreen].bounds.size.width;
     CGFloat toolBarHeight = 44.0;
     UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, toolBarWidth, toolBarHeight)];
     

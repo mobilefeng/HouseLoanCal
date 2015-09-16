@@ -18,7 +18,7 @@ enum {
     // 贷款期限
     kHLCProfundInputPeriod,
     
-    // 还款日月
+    // 还款日期
     kHLCProfundInputDate,
     
     // 贷款利率

@@ -20,13 +20,15 @@ typedef NS_ENUM(NSInteger, HLCLoanType) {
 
 @interface HLCLoanModel : NSObject
 
-+ (instancetype)sharedInstance;
+//+ (instancetype)sharedInstance;
 
 - (id)initWithPrincipal:(NSNumber *)pricipal
                  period:(NSInteger)period
                    date:(NSDate *)date
                    rate:(NSNumber *)rate
                withType:(HLCLoanType)type;
+
+- (id)init;
 
 - (BOOL)isInputValid;
 

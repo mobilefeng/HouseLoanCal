@@ -37,16 +37,16 @@
 
 @synthesize cumulativeInterest;
 
-+ (instancetype)sharedInstance {
-    static id _sharedInstance = nil;
-    static dispatch_once_t oncePredicate;
-    
-    dispatch_once(&oncePredicate, ^{
-        _sharedInstance = [[HLCLoanModel alloc] init];
-    });
-    
-    return _sharedInstance;
-}
+//+ (instancetype)sharedInstance {
+//    static id _sharedInstance = nil;
+//    static dispatch_once_t oncePredicate;
+//    
+//    dispatch_once(&oncePredicate, ^{
+//        _sharedInstance = [[HLCLoanModel alloc] init];
+//    });
+//    
+//    return _sharedInstance;
+//}
 
 - (id)initWithPrincipal:(NSNumber *)pricipal
                  period:(NSInteger)period
@@ -87,7 +87,7 @@
 
 
 - (BOOL)isInputValid {
-    return (self.loanPrincipal && self.loanPeriod && self.loanDate && self.loanRate.doubleValue!=0.0 && self.loanType);
+    return (self.loanPrincipal.doubleValue>0.0 && self.loanPeriod>0 && self.loanDate && self.loanRate.doubleValue!=0.0 && self.loanType);
 }
 
 - (void)calculate {

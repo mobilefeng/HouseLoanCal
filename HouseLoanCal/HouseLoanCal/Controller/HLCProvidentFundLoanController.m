@@ -40,7 +40,8 @@
         UIImage *tabSelectImage = [UIImage imageNamed:@"icon_profund_height"];
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"公积金贷款" image:tabImage selectedImage:tabSelectImage];
         
-        self.loanModel = [HLCLoanModel sharedInstance];
+        // 初始化数据模型
+        self.loanModel = [[HLCLoanModel alloc] init];
         
         // 初始化时不显示输出结果
         self.isShowOutput = NO;
@@ -169,7 +170,7 @@
                         cell = [[HLCLoanInputTableViewCell alloc] initWithHLCStyle:HLCLoanInputTableViewCellStyleTextField reuseIdentifier:cellIdentifier withTag:1003];
                     }
                     [cell setTitle:@"贷款利率(％)"];
-                    [cell setTextFieldValue:[NSString stringWithFormat:@"%.3f", [self.loanModel.loanRate doubleValue]]];
+                    [cell setTextFieldValue:[NSString stringWithFormat:@"%.2f", [self.loanModel.loanRate doubleValue]]];
                     cell.delegate = self;
                     return cell;
                 }
@@ -322,7 +323,7 @@
 - (void)inputFieldDidEndEditing:(UITextField *)textField {
     switch (textField.tag) {
         case 1000: {
-            self.loanModel.loanPrincipal = [NSNumber numberWithFloat:[textField.text floatValue]];
+            self.loanModel.loanPrincipal = [NSNumber numberWithDouble:[textField.text doubleValue]];
         }
             break;
         case 1001: {
@@ -334,7 +335,7 @@
         }
             break;
         case 1003: {
-            self.loanModel.loanRate = [NSNumber numberWithFloat:[textField.text floatValue]];
+            self.loanModel.loanRate = [NSNumber numberWithDouble:[textField.text doubleValue]];
         }
             break;
         default:
@@ -357,7 +358,9 @@
         default:
             break;
     }
-    [self calculateAndReloadDate];
+    if (self.loanModel.isInputValid && self.isShowOutput) {
+        [self calculateAndReloadDate];
+    }
 }
 
 #pragma mark - Action
@@ -376,6 +379,12 @@
         self.isShowOutput = YES;
         [self.tableView reloadData];
     } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
+                                                        message:@"亲还有部分信息未填噢～"
+                                                       delegate:self
+                                              cancelButtonTitle:@"确认"
+                                              otherButtonTitles:nil];
+        [alert show];
         self.isShowOutput = NO;
         [self.tableView reloadData];
     }

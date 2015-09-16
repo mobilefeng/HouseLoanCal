@@ -40,7 +40,7 @@
         switch (style) {
             case HLCSettingTableViewCellStyleContent: {
                 _contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.size.width-labelOffsetX-labelWidth, labelOffsetY, labelWidth, labelHeight)];
-                _contentLabel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+                _contentLabel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin;
                 _contentLabel.textColor = kHLCCellDetailColor;
                 _contentLabel.font = [UIFont systemFontOfSize:kHLCCellDetailFont];
                 _contentLabel.textAlignment = NSTextAlignmentRight;
