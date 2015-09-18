@@ -11,7 +11,12 @@
 
 // ___________________________________________________________
 //
+// 版本号
+#define HLC_APP_VERSION ([[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"])
 
+
+// ___________________________________________________________
+//
 // RGB颜色
 #define UIColorFromRGB(rgbValue) ([UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0])
 
@@ -53,7 +58,6 @@
 
 // ___________________________________________________________
 //
-
 // NavBar 标题字体
 #define kHLCNavBarTitleFont         (20.0)
 
@@ -72,7 +76,6 @@
 
 // ___________________________________________________________
 //
-
 // Cell 高度
 #define kHLCHeightForCell           (44.0)
 

@@ -53,8 +53,8 @@
             if (!cell) {
                 cell = [[HLCSettingTableViewCell alloc] initWithHLCStyle:(HLCSettingTableViewCellStyleContent) reuseIdentifier:versionCellIndentifier];
             }
-            [cell setTitle:@"版本"];
-            [cell setContent:@"1.0.0"];
+            [cell setTitle:@"当前版本"];
+            [cell setContent:[NSString stringWithFormat:@"%@", HLC_APP_VERSION]];
             
             return cell;
         }
@@ -65,7 +65,7 @@
             if (!cell) {
                 cell = [[HLCSettingTableViewCell alloc] initWithHLCStyle:(HLCSettingTableViewCellStyleAccessory) reuseIdentifier:scoreCellIndentifier];
             }
-            [cell setTitle:@"给五星好评"];
+            [cell setTitle:@"五星好评"];
             
             return cell;
         }
@@ -76,7 +76,7 @@
             if (!cell) {
                 cell = [[HLCSettingTableViewCell alloc] initWithHLCStyle:(HLCSettingTableViewCellStyleAccessory) reuseIdentifier:recommendCellIndentifier];
             }
-            [cell setTitle:@"推荐给朋友"];
+            [cell setTitle:@"推荐朋友"];
             
             return cell;
         }
