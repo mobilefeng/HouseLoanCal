@@ -14,7 +14,11 @@
 @implementation HLCBaseTableViewController
 
 - (id)initViewController {
-    return [self initWithStyle:UITableViewStyleGrouped];
+    if (self = [super initWithStyle:UITableViewStyleGrouped]) {
+        // 设置下滑时键盘收起
+        self.tableView.keyboardDismissMode  = UIScrollViewKeyboardDismissModeInteractive;
+    }
+    return self;
 }
 
 - (void)viewDidLoad {
