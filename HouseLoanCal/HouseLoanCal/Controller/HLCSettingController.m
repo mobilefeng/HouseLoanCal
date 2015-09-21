@@ -18,6 +18,7 @@
     if (self = [super initViewController]) {
         UIImage *tabImage = [UIImage imageNamed:@"icon_setting_normal"];
         UIImage *tabSelectImage = [UIImage imageNamed:@"icon_setting_height"];
+        tabSelectImage = [tabSelectImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"设置" image:tabImage selectedImage:tabSelectImage];
         }
     return self;

@@ -44,7 +44,8 @@
     if (self = [super initViewController]) {
         UIImage *tabImage = [UIImage imageNamed:@"icon_commer_normal"];
         UIImage *tabSelectImage = [UIImage imageNamed:@"icon_commer_height"];
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"商业贷款" image:tabImage selectedImage:tabSelectImage];
+        tabSelectImage = [tabSelectImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"商业" image:tabImage selectedImage:tabSelectImage];
         
         // 初始化数据模型
         self.loanModel = [[HLCLoanModel alloc] init];

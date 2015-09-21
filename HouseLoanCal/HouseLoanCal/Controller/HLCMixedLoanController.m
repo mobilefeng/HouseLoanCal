@@ -58,7 +58,8 @@
     if (self = [super initViewController]) {
         UIImage *tabImage = [UIImage imageNamed:@"icon_mixed_normal"];
         UIImage *tabSelectImage = [UIImage imageNamed:@"icon_mixed_height"];
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"组合贷款" image:tabImage selectedImage:tabSelectImage];
+        tabSelectImage = [tabSelectImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"组合" image:tabImage selectedImage:tabSelectImage];
         
         // 初始化数据模型
         self.profundLoanModel = [[HLCLoanModel alloc] init];

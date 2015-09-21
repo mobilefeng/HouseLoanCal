@@ -27,7 +27,7 @@
 #define kHLCNavBarColor             (UIColorFromRGB(0xF7F7F7))
 
 // 主题色
-#define kHLCThemeColor              (UIColorFromRGB(0xFF4683))
+#define kHLCThemeColor              (UIColorFromRGB(0x09BB07))
 
 // NavBar 标题颜色
 #define kHLCNavBarTitleColor        (UIColorFromRGB(0x111111))
