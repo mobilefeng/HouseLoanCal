@@ -13,13 +13,15 @@
 
 #import "HLCTextField.h"
 
-@interface HLCLoanInputTableViewCell () <UITextFieldDelegate>
+@interface HLCLoanInputTableViewCell () <UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UITextField *textField;
+@property (nonatomic, strong) UIPickerView *pickerView;
 @property (nonatomic, strong) UIDatePicker *datePicker;
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
+@property (nonatomic, strong) NSMutableArray *pickerArray;
 
 @end
 
@@ -60,6 +62,19 @@
                 _textField.tag = tag;
                 _textField.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin;
                 [self.contentView addSubview:_textField];
+            }
+                break;
+            case HLCLoanInputTableViewCellStylePickerView: {
+                [self initTextFieldWithFrame:detailRect];
+                _textField.font = [UIFont systemFontOfSize:kHLCCellDetailFont];
+                _textField.delegate = self;
+                _textField.tag = tag;
+                _textField.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin;
+                [self.contentView addSubview:_textField];
+                
+                // 设置 pickerView
+                [self initPickerView];
+                _textField.inputView = _pickerView;
             }
                 break;
             case HLCLoanInputTableViewCellStyleDatePicker: {
@@ -128,6 +143,21 @@
     _textField.layer.borderWidth = 1.0f;
     
     _textField.keyboardType = UIKeyboardTypeDecimalPad;
+}
+
+- (void)initPickerView {
+    _pickerView = [[UIPickerView alloc] initWithFrame:CGRectZero];
+    _pickerView.delegate = self;
+    
+    _pickerArray = [[NSMutableArray alloc] init];
+    [_pickerArray addObject:[NSNumber numberWithDouble:0.5]];
+    for (int index = 1; index <= 30; index ++) {
+        [_pickerArray addObject:[NSNumber numberWithInt:index]];
+    }
+    
+    // 默认选中30年
+    [_pickerView selectRow:([_pickerArray count]-1) inComponent:0 animated:YES];
+    _textField.text = [NSString stringWithFormat:@"%@", [_pickerArray objectAtIndex:([_pickerArray count]-1)]];
 }
 
 - (void)initDatePicker {
@@ -202,11 +232,38 @@
     _textField.inputAccessoryView = toolBar;
 }
 
-#pragma maek - UITableViewCell Delegate
+#pragma mark - UITableViewCell Delegate
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     if ([_delegate respondsToSelector:@selector(inputFieldDidEndEditing:)]) {
         [_delegate inputFieldDidEndEditing:textField];
+    }
+}
+
+
+#pragma mark - UIPickerView Delegate
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return [_pickerArray count];
+}
+
+- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    NSNumber *pickerNum = [_pickerArray objectAtIndex:row];
+    if (0 == row) {
+        return [NSString stringWithFormat:@"%.1f年（%.0f期）", pickerNum.doubleValue, pickerNum.doubleValue*12];
+    } else {
+        return [NSString stringWithFormat:@"%.0f年（%.0f期）", pickerNum.doubleValue, pickerNum.doubleValue*12];
+    }
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    _textField.text = [NSString stringWithFormat:@"%@", [_pickerArray objectAtIndex:row]];
+    if ([_delegate respondsToSelector:@selector(inputFieldDidEndEditing:)]) {
+        [_delegate inputFieldDidEndEditing:_textField];
     }
 }
 

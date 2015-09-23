@@ -12,6 +12,7 @@
 
 typedef NS_ENUM(NSInteger, HLCLoanInputTableViewCellStyle) {
     HLCLoanInputTableViewCellStyleTextField,            // Title + TextField
+    HLCLoanInputTableViewCellStylePickerView,         // Title + PickerView
     HLCLoanInputTableViewCellStyleDatePicker,           // Title + DataPicker
     HLCLoanInputTableViewCellStyleSegmentedControl,     // Title + SegmentedControl
 };

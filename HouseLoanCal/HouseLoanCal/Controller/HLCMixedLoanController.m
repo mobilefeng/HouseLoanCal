@@ -68,6 +68,10 @@
         // 初始化时不显示输出结果
         self.isShowOutput = NO;
         
+        // 初始化贷款期限
+        self.profundLoanModel.loanPeriod = [NSNumber numberWithDouble:30];
+        self.commerLoanModel.loanPeriod = 
+        
         // 初始化公积金贷款利率
         self.profundLoanModel.loanRate = [NSNumber numberWithDouble:3.25];
         
@@ -189,12 +193,9 @@
                     static NSString *cellIdentifier = @"InputPeriodCellIdentifier";
                     HLCLoanInputTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
                     if (!cell) {
-                        cell = [[HLCLoanInputTableViewCell alloc] initWithHLCStyle:HLCLoanInputTableViewCellStyleTextField reuseIdentifier:cellIdentifier withTag:3002];
+                        cell = [[HLCLoanInputTableViewCell alloc] initWithHLCStyle:HLCLoanInputTableViewCellStylePickerView reuseIdentifier:cellIdentifier withTag:3002];
                     }
                     [cell setTitle:@"贷款期限(年)"];
-                    if (self.profundLoanModel.loanPeriod <= 0) {
-                        [cell setTextFieldBlank];
-                    }
                     cell.delegate = self;
                     return cell;
                 }
@@ -412,8 +413,8 @@
         }
             break;
         case 3002: {
-            self.profundLoanModel.loanPeriod = [textField.text intValue];
-            self.commerLoanModel.loanPeriod = [textField.text intValue];
+            self.profundLoanModel.loanPeriod = [NSNumber numberWithDouble:[textField.text doubleValue]];
+            self.commerLoanModel.loanPeriod = [NSNumber numberWithDouble:[textField.text doubleValue]];
         }
             break;
         case 3003: {

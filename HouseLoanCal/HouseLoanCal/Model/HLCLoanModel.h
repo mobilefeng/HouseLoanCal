@@ -20,10 +20,8 @@ typedef NS_ENUM(NSInteger, HLCLoanType) {
 
 @interface HLCLoanModel : NSObject
 
-//+ (instancetype)sharedInstance;
-
 - (id)initWithPrincipal:(NSNumber *)pricipal
-                 period:(NSInteger)period
+                 period:(NSNumber *)period
                    date:(NSDate *)date
                    rate:(NSNumber *)rate
                withType:(HLCLoanType)type;
@@ -40,7 +38,7 @@ typedef NS_ENUM(NSInteger, HLCLoanType) {
 // 贷款金额
 @property (nonatomic, strong) NSNumber *loanPrincipal;
 // 贷款期限
-@property (nonatomic, assign) NSInteger loanPeriod;
+@property (nonatomic, strong) NSNumber *loanPeriod;
 // 贷款日期
 @property (nonatomic, strong) NSDate *loanDate;
 // 贷款利率

@@ -53,6 +53,9 @@
         // 初始化时不显示输出结果
         self.isShowOutput = NO;
         
+        // 初始化贷款期限
+        self.loanModel.loanPeriod = [NSNumber numberWithDouble:30];
+        
         // 初始化无折扣贷款利率
         self.loanRateNoDiscount = [NSNumber numberWithDouble:5.15];
         
@@ -155,12 +158,9 @@
                     static NSString *cellIdentifier = @"InputPeriodCellIdentifier";
                     HLCLoanInputTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
                     if (!cell) {
-                        cell = [[HLCLoanInputTableViewCell alloc] initWithHLCStyle:HLCLoanInputTableViewCellStyleTextField reuseIdentifier:cellIdentifier withTag:2001];
+                        cell = [[HLCLoanInputTableViewCell alloc] initWithHLCStyle:HLCLoanInputTableViewCellStylePickerView reuseIdentifier:cellIdentifier withTag:2001];
                     }
                     [cell setTitle:@"贷款期限(年)"];
-                    if (self.loanModel.loanPeriod <= 0) {
-                        [cell setTextFieldBlank];
-                    }
                     cell.delegate = self;
                     return cell;
                 }
@@ -363,7 +363,7 @@
         }
             break;
         case 2001: {
-            self.loanModel.loanPeriod = [textField.text intValue];
+            self.loanModel.loanPeriod = [NSNumber numberWithDouble:[textField.text doubleValue]];
         }
             break;
         case 2002: {

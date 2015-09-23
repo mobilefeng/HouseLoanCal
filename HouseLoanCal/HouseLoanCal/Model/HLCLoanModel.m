@@ -37,19 +37,8 @@
 
 @synthesize cumulativeInterest;
 
-//+ (instancetype)sharedInstance {
-//    static id _sharedInstance = nil;
-//    static dispatch_once_t oncePredicate;
-//    
-//    dispatch_once(&oncePredicate, ^{
-//        _sharedInstance = [[HLCLoanModel alloc] init];
-//    });
-//    
-//    return _sharedInstance;
-//}
-
 - (id)initWithPrincipal:(NSNumber *)pricipal
-                 period:(NSInteger)period
+                 period:(NSNumber *)period
                    date:(NSDate *)date
                    rate:(NSNumber *)rate
                withType:(HLCLoanType)type {
@@ -74,7 +63,7 @@
 }
 
 - (id)init {
-    return [self initWithPrincipal:[NSNumber numberWithDouble:0.0] period:0 date:[NSDate date] rate:[NSNumber numberWithDouble:5.0] withType:HLCLoanTypeEqualPrincipal];
+    return [self initWithPrincipal:[NSNumber numberWithDouble:0.0] period:[NSNumber numberWithDouble:30.0] date:[NSDate date] rate:[NSNumber numberWithDouble:5.0] withType:HLCLoanTypeEqualPrincipal];
 }
 
 - (NSNumber *)cumulativeInterest {
@@ -86,11 +75,19 @@
 }
 
 - (BOOL)isInputValid {
-    return (self.loanPrincipal.doubleValue>0.0 && self.loanPeriod>0 && self.loanDate && self.loanRate.doubleValue!=0.0 && self.loanType);
+    return (self.loanPrincipal.doubleValue>0.0 && self.loanPeriod && self.loanDate && self.loanRate.doubleValue!=0.0 && self.loanType);
 }
 
 - (void)calculate {
-    self.monthOfLoan = self.loanPeriod * 12;
+    
+    // 计算前清空之前的结果
+    [self.eachInterest removeAllObjects];
+    [self.eachMonth removeAllObjects];
+    [self.eachPrincipal removeAllObjects];
+    [self.eachPrincipalPlusInterest removeAllObjects];
+    [self.eachDiff removeAllObjects];
+    
+    self.monthOfLoan = self.loanPeriod.doubleValue * 12;
     double monthRate = self.loanRate.doubleValue / (12*100);
     double principalInTenThousand = self.loanPrincipal.doubleValue * kHLCTenThousand;
     
