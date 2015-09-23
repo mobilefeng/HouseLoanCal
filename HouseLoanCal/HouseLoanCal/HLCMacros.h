@@ -21,16 +21,16 @@
 #define UIColorFromRGB(rgbValue) ([UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0])
 
 // TabBar 背景色
-#define kHLCTabBarColor             (UIColorFromRGB(0xF7F7F7))
+#define kHLCTabBarColor             (UIColorFromRGB(0xF0F0F0))
 
 // NavBar 背景色
-#define kHLCNavBarColor             (UIColorFromRGB(0xF7F7F7))
+#define kHLCNavBarColor             (UIColorFromRGB(0x111111))
 
 // 主题色
 #define kHLCThemeColor              (UIColorFromRGB(0x09BB07))
 
 // NavBar 标题颜色
-#define kHLCNavBarTitleColor        (UIColorFromRGB(0x111111))
+#define kHLCNavBarTitleColor        (UIColorFromRGB(0xFAFAFA))
 
 // 页面背景颜色
 #define kHLCBackgroundColor         (UIColorFromRGB(0xEEEEEE))

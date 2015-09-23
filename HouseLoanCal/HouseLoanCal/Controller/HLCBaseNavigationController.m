@@ -24,7 +24,7 @@
         [self.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                     [UIFont systemFontOfSize:kHLCNavBarTitleFont], NSFontAttributeName,
                                                     kHLCNavBarTitleColor, NSForegroundColorAttributeName, nil]];
-        
+        [self setNeedsStatusBarAppearanceUpdate];
         self.delegate = self;
     }
     return self;

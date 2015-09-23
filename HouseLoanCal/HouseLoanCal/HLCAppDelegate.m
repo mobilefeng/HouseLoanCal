@@ -22,6 +22,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = [[HLCRootViewController alloc] init];
     [self.window makeKeyAndVisible];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
     return YES;
 }
