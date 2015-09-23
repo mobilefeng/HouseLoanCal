@@ -12,6 +12,7 @@
 #import "HLCMacros.h"
 
 @interface HLCTableViewCell () {
+    UIView *_topLine;
     UIView *_bottomLine;
 }
 
@@ -40,7 +41,20 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
+    _topLine.frame = CGRectMake(0, 0, self.bounds.size.width, 0.5);
     _bottomLine.frame = CGRectMake(0, self.bounds.size.height-0.5, self.bounds.size.width, 0.5);
+}
+
+- (void)addTopSeparatorLineLayer {
+    [self addTopSeparatorLineLayerWithColor:kHLCCellBottomLineColor];
+}
+
+- (void)addTopSeparatorLineLayerWithColor:(UIColor *)aColor {
+    if (_topLine == nil) {
+        _topLine = [[UIView alloc] initWithFrame:CGRectZero];
+        _topLine.backgroundColor = aColor;
+        [self.contentView addSubview:_topLine];
+    }
 }
 
 - (void)addBottomSeparatorLineLayer {

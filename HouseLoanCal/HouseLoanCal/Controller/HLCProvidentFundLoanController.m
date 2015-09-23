@@ -84,12 +84,12 @@
     
     switch (section) {
         case kHLCLoanSectionInput: {
-            numOfRows = kHLCProfundInputCount;
+            numOfRows = kHLCProfundInputCount + 1;
         }
             break;
         case kHLCLoanSectionOutputSummary: {
             if (self.isShowOutput) {
-                numOfRows = kHLCProfundSummaryCount;
+                numOfRows = kHLCProfundSummaryCount + 1;
             }
         }
             break;
@@ -107,6 +107,9 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ( (kHLCLoanSectionInput == indexPath.section && kHLCProfundInputCount == indexPath.row) || (kHLCLoanSectionOutputSummary == indexPath.section && kHLCProfundSummaryCount == indexPath.row)) {
+        return kHLCHeightForCellSeparator;
+    }
     return kHLCHeightForCell;
 }
 
@@ -138,6 +141,7 @@
                     if (self.loanModel.loanPrincipal == nil) {
                         [cell setTextFieldBlank];
                     }
+                    [cell addTopSeparatorLineLayer];
                     cell.delegate = self;
                     return cell;
                 }
@@ -187,6 +191,16 @@
                     return cell;
                 }
                     break;
+                case kHLCProfundInputCount: {
+                    static NSString *cellIdentifier = @"InputSeparatorCellIdentifier";
+                    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+                    if (!cell) {
+                        cell = [[UITableViewCell alloc] init];
+                    }
+                    cell.backgroundColor = kHLCBackgroundColor;
+                    return cell;
+                }
+                    break;
                 default:
                     break;
             }
@@ -204,6 +218,7 @@
                         }
                         [cell setTitle:@"累计支付利息(元)"];
                         [cell setDetail:[moneyFormatter stringFromNumber:self.loanModel.cumulativeInterest]];
+                        [cell addTopSeparatorLineLayer];
                         return cell;
                     }
                         break;
@@ -215,6 +230,16 @@
                         }
                         [cell setTitle:@"累计还款总额(元)"];
                         [cell setDetail:[moneyFormatter stringFromNumber:self.loanModel.cumulativePrincipalPlusInterest]];
+                        return cell;
+                    }
+                        break;
+                    case kHLCProfundSummaryCount: {
+                        static NSString *cellIdentifier = @"OutputSummarySeparatorCellIdentifier";
+                        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+                        if (!cell) {
+                            cell = [[UITableViewCell alloc] init];
+                        }
+                        cell.backgroundColor = kHLCBackgroundColor;
                         return cell;
                     }
                         break;
@@ -246,6 +271,7 @@
                             break;
                     }
                     [cell setDetail:[moneyFormatter stringFromNumber:self.loanModel.eachEqual]];
+                    [cell addTopSeparatorLineLayer];
                     return cell;
                 } else if (kHLCProfundDetailTitle == row) {
                     static NSString *cellIdentifier = @"OutputDetailTitleCellIdentifier";
@@ -289,24 +315,6 @@
     return [[UITableViewCell alloc] init];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (section == kHLCLoanSectionInput) {
-        return 0;
-    } else {
-        return kHLCHeightForCellHeader;
-    }
-}
-
-- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, kHLCHeightForCellHeader)];
-    headerView.backgroundColor = kHLCBackgroundColor;
-    
-    UIView *bottomLine = [[UIView alloc] initWithFrame:CGRectMake(0, kHLCHeightForCellHeader-0.5, self.tableView.frame.size.width, 0.5)];
-    bottomLine.backgroundColor = kHLCCellBottomLineColor;
-    [headerView addSubview:bottomLine];
-    
-    return headerView;
-}
 
 #pragma mark - InputCell Delegate
 
@@ -369,7 +377,7 @@
 - (void)resetAndReloadData {
     self.isShowOutput = NO;
     self.loanModel.loanPrincipal = nil;
-    self.loanModel.loanPeriod = 0;
+    self.loanModel.loanPeriod = [NSNumber numberWithDouble:30.0];
     
     [self.tableView reloadData];
 }

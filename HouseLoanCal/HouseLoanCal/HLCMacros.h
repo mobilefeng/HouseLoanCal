@@ -80,8 +80,7 @@
 #define kHLCHeightForCell           (44.0)
 
 // Cell Header 高度
-#define kHLCHeightForCellHeader     (16.0)
-
+#define kHLCHeightForCellSeparator  (16.0)
 
 
 #endif

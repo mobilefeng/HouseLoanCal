@@ -10,4 +10,6 @@
 
 @interface HLCTableViewCell : UITableViewCell
 
+- (void)addTopSeparatorLineLayer;
+
 @end
