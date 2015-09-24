@@ -27,7 +27,7 @@
         
         CGFloat labelWidth = 100.0;
         CGFloat labelHeight = 20.0;
-        CGFloat labelOffsetX = 10.0;
+        CGFloat labelOffsetX = 15.0;
         CGFloat labelOffsetY = (self.bounds.size.height-labelHeight)*0.5;
         
         // 添加title

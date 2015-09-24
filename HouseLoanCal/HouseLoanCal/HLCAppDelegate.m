@@ -11,6 +11,9 @@
 //
 #import "HLCRootViewController.h"
 
+//
+#import "MobClick.h"
+
 @interface HLCAppDelegate ()
 
 @end
@@ -22,7 +25,12 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = [[HLCRootViewController alloc] init];
     [self.window makeKeyAndVisible];
+    
+    // 设置statusBar文字为白色
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    
+    // 友盟
+    [MobClick startWithAppkey:@"5602ae2de0f55ace17001418" reportPolicy:BATCH channelId:nil];
     
     return YES;
 }

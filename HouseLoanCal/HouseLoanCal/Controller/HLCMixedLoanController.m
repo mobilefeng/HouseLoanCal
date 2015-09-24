@@ -70,7 +70,7 @@
         
         // 初始化贷款期限
         self.profundLoanModel.loanPeriod = [NSNumber numberWithDouble:30];
-        self.commerLoanModel.loanPeriod = 
+        self.commerLoanModel.loanPeriod = [NSNumber numberWithDouble:30];
         
         // 初始化公积金贷款利率
         self.profundLoanModel.loanRate = [NSNumber numberWithDouble:3.25];
