@@ -24,10 +24,10 @@
 #define kHLCTabBarColor             (UIColorFromRGB(0xF0F0F0))
 
 // NavBar 背景色
-#define kHLCNavBarColor             (UIColorFromRGB(0x111111))
+#define kHLCNavBarColor             (UIColorFromRGB(0x3E4041))
 
 // 主题色
-#define kHLCThemeColor              (UIColorFromRGB(0x09BB07))
+#define kHLCThemeColor              (UIColorFromRGB(0xFEA600))
 
 // NavBar 标题颜色
 #define kHLCNavBarTitleColor        (UIColorFromRGB(0xFAFAFA))
@@ -55,6 +55,9 @@
 
 // ToolBar Bottom Line 颜色
 #define kHLCToolBarBottomLineColor  (UIColorFromRGB(0xA6A6A6))
+
+// SegmentedControl 颜色
+#define kHLCSegmentedControlColor   (UIColorFromRGB(0x2D7DA4))
 
 // ___________________________________________________________
 //

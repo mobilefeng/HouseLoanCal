@@ -13,6 +13,8 @@
 
 //
 #import "MobClick.h"
+#import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
 
 @interface HLCAppDelegate ()
 
@@ -31,8 +33,22 @@
     
     // 友盟
     [MobClick startWithAppkey:@"5602ae2de0f55ace17001418" reportPolicy:BATCH channelId:nil];
+    [UMSocialData setAppKey:@"5602ae2de0f55ace17001418"];
+    // 设置微信AppId, AppSecret, 分享Url
+    [UMSocialWechatHandler setWXAppId:@"wxd7b7a0dbc529ac35" appSecret:@"7cb6396a8d57e00a022319ebf14d95bc" url:@"http://www.baidu.com"];
     
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return  [UMSocialSnsService handleOpenURL:url];
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return  [UMSocialSnsService handleOpenURL:url];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

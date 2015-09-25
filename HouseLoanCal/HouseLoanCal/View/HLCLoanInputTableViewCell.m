@@ -95,6 +95,7 @@
                 NSArray *segmentedArray = [[NSArray alloc] initWithObjects:@"等额本息", @"等额本金", nil];
                 _segmentedControl = [[UISegmentedControl alloc] initWithItems:segmentedArray];
                 _segmentedControl.frame = detailRect;
+                _segmentedControl.tintColor = kHLCSegmentedControlColor;
                 _segmentedControl.selectedSegmentIndex = 0;
                 _segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin;
                 [_segmentedControl addTarget:self action:@selector(segmentedControlAction:) forControlEvents:UIControlEventValueChanged];
@@ -202,22 +203,22 @@
     // 重置按钮
     UIButton *resetButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, buttonWidth, buttonHeight)];
     [resetButton setTitle:@"重置" forState:UIControlStateNormal];
-    [resetButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [resetButton setTitleColor:kHLCSegmentedControlColor forState:UIControlStateNormal];
     [resetButton.layer setMasksToBounds:YES];
     [resetButton.layer setCornerRadius:5.0];
     [resetButton.layer setBorderWidth:1.0];
-    [resetButton.layer setBorderColor:[UIColor blueColor].CGColor];
+    [resetButton.layer setBorderColor:kHLCSegmentedControlColor.CGColor];
     [resetButton addTarget:self action:@selector(resetAction:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithCustomView:resetButton];
     
     // 计算按钮
     UIButton *calculButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, buttonWidth, buttonHeight)];
     [calculButton setTitle:@"计算" forState:UIControlStateNormal];
-    [calculButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [calculButton setTitleColor:kHLCSegmentedControlColor forState:UIControlStateNormal];
     [calculButton.layer setMasksToBounds:YES];
     [calculButton.layer setCornerRadius:5.0];
     [calculButton.layer setBorderWidth:1.0];
-    [calculButton.layer setBorderColor:[UIColor blueColor].CGColor];
+    [calculButton.layer setBorderColor:kHLCSegmentedControlColor.CGColor];
     [calculButton addTarget:self action:@selector(calculateAction:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithCustomView:calculButton];
     

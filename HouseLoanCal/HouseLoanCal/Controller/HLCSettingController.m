@@ -11,6 +11,11 @@
 //
 #import "HLCMacros.h"
 #import "HLCSettingTableViewCell.h"
+#import "UMSocial.h"
+
+@interface HLCSettingController ()<UMSocialUIDelegate>
+
+@end
 
 @implementation HLCSettingController
 
@@ -89,5 +94,28 @@
     return [[UITableViewCell alloc] init];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (indexPath.row) {
+        case kHLCSettingRecommend: {
+            [UMSocialSnsService presentSnsIconSheetView:self
+                                                 appKey:@"5602ae2de0f55ace17001418"
+                                              shareText:@"极简房贷计算器 From @xuyang"
+                                             shareImage:[UIImage imageNamed:@"shareAppIcon"] shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatSession, UMShareToWechatTimeline, UMShareToSina, UMShareToQzone, nil]
+                                               delegate:self];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response {
+    //根据 responseCode 得到发送结果,如果分享成功
+    if(response.responseCode == UMSResponseCodeSuccess)
+    {
+        //得到分享到的平台名
+        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
+    }
+}
 
 @end
