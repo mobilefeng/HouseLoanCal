@@ -13,6 +13,8 @@
 //
 // 版本号
 #define HLC_APP_VERSION ([[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"])
+// App Store 链接
+#define kHLCAppStore @"https://itunes.apple.com/cn/app/id1043888133"
 
 
 // ___________________________________________________________
@@ -24,10 +26,10 @@
 #define kHLCTabBarColor             (UIColorFromRGB(0xF0F0F0))
 
 // NavBar 背景色
-#define kHLCNavBarColor             (UIColorFromRGB(0x3E4041))
+#define kHLCNavBarColor             (UIColorFromRGB(0x111111))
 
 // 主题色
-#define kHLCThemeColor              (UIColorFromRGB(0xFEA600))
+#define kHLCThemeColor              (UIColorFromRGB(0x2D7DA4))
 
 // NavBar 标题颜色
 #define kHLCNavBarTitleColor        (UIColorFromRGB(0xFAFAFA))

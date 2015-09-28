@@ -15,7 +15,7 @@ enum {
     // 版本
     kHLCSettingVersion = 0,
     // 评分
-    kHLCSettingScore,
+    kHLCSettingComment,
     // 推荐给朋友
     kHLCSettingRecommend,
     // Row 数

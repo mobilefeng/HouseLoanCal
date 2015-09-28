@@ -10,13 +10,19 @@
 		2902B15C1B78934F0027D13E /* HLCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2902B15B1B78934F0027D13E /* HLCTextField.m */; };
 		291272E41B7DB81B00679251 /* HLCLoanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 291272E31B7DB81B00679251 /* HLCLoanModel.m */; };
 		2933846F1B611E8900D0B455 /* HLCTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2933846E1B611E8900D0B455 /* HLCTableViewCell.m */; };
+		293DE43D1BB96B5C00E5FAEE /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 293DE43C1BB96B5C00E5FAEE /* ImageIO.framework */; };
+		293DE4631BB9848700E5FAEE /* libSocialSinaSSO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 293DE4561BB9848700E5FAEE /* libSocialSinaSSO.a */; settings = {ASSET_TAGS = (); }; };
+		293DE4641BB9848700E5FAEE /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 293DE4571BB9848700E5FAEE /* libWeiboSDK.a */; settings = {ASSET_TAGS = (); }; };
+		293DE4651BB9848700E5FAEE /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 293DE4601BB9848700E5FAEE /* WeiboSDK.bundle */; settings = {ASSET_TAGS = (); }; };
+		293DE4741BB9850000E5FAEE /* libSocialSinaSSO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 293DE4671BB9850000E5FAEE /* libSocialSinaSSO.a */; settings = {ASSET_TAGS = (); }; };
+		293DE4751BB9850000E5FAEE /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 293DE4681BB9850000E5FAEE /* libWeiboSDK.a */; settings = {ASSET_TAGS = (); }; };
+		293DE4761BB9850000E5FAEE /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 293DE4711BB9850000E5FAEE /* WeiboSDK.bundle */; settings = {ASSET_TAGS = (); }; };
 		2956D9F71B6920A500E34536 /* HLCSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2956D9F61B6920A500E34536 /* HLCSettingTableViewCell.m */; };
 		2956D9FA1B692A5C00E34536 /* HLCLoanInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2956D9F91B692A5C00E34536 /* HLCLoanInputTableViewCell.m */; };
 		2956D9FD1B692A8E00E34536 /* HLCLoanOutputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2956D9FC1B692A8E00E34536 /* HLCLoanOutputTableViewCell.m */; };
 		295B352B1B5DD155006B9A0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B352A1B5DD155006B9A0F /* main.m */; };
 		295B35341B5DD155006B9A0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295B35321B5DD155006B9A0F /* Main.storyboard */; };
 		295B35361B5DD155006B9A0F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 295B35351B5DD155006B9A0F /* Images.xcassets */; };
-		295B35391B5DD155006B9A0F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 295B35371B5DD155006B9A0F /* LaunchScreen.xib */; };
 		295B35451B5DD155006B9A0F /* HouseLoanCalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B35441B5DD155006B9A0F /* HouseLoanCalTests.m */; };
 		295B35501B5DD4C2006B9A0F /* HLCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B354F1B5DD4C2006B9A0F /* HLCAppDelegate.m */; };
 		295B35531B5DD84F006B9A0F /* HLCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B35521B5DD84F006B9A0F /* HLCRootViewController.m */; };
@@ -64,6 +70,33 @@
 		291272E31B7DB81B00679251 /* HLCLoanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCLoanModel.m; path = Model/HLCLoanModel.m; sourceTree = "<group>"; };
 		2933846D1B611E8900D0B455 /* HLCTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCTableViewCell.h; path = View/HLCTableViewCell.h; sourceTree = "<group>"; };
 		2933846E1B611E8900D0B455 /* HLCTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCTableViewCell.m; path = View/HLCTableViewCell.m; sourceTree = "<group>"; };
+		293DE43C1BB96B5C00E5FAEE /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		293DE4561BB9848700E5FAEE /* libSocialSinaSSO.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSinaSSO.a; sourceTree = "<group>"; };
+		293DE4571BB9848700E5FAEE /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
+		293DE4581BB9848700E5FAEE /* UMSocialSinaSSOHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSinaSSOHandler.h; sourceTree = "<group>"; };
+		293DE4591BB9848700E5FAEE /* WBHttpRequest+WeiboShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboShare.h"; sourceTree = "<group>"; };
+		293DE45A1BB9848700E5FAEE /* WBHttpRequest+WeiboToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboToken.h"; sourceTree = "<group>"; };
+		293DE45B1BB9848700E5FAEE /* WBHttpRequest+WeiboUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboUser.h"; sourceTree = "<group>"; };
+		293DE45C1BB9848700E5FAEE /* WBHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBHttpRequest.h; sourceTree = "<group>"; };
+		293DE45D1BB9848700E5FAEE /* WBSDKBasicButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKBasicButton.h; sourceTree = "<group>"; };
+		293DE45E1BB9848700E5FAEE /* WBSDKCommentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKCommentButton.h; sourceTree = "<group>"; };
+		293DE45F1BB9848700E5FAEE /* WBSDKRelationshipButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKRelationshipButton.h; sourceTree = "<group>"; };
+		293DE4601BB9848700E5FAEE /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WeiboSDK.bundle; sourceTree = "<group>"; };
+		293DE4611BB9848700E5FAEE /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
+		293DE4621BB9848700E5FAEE /* WeiboUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboUser.h; sourceTree = "<group>"; };
+		293DE4671BB9850000E5FAEE /* libSocialSinaSSO.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSinaSSO.a; sourceTree = "<group>"; };
+		293DE4681BB9850000E5FAEE /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
+		293DE4691BB9850000E5FAEE /* UMSocialSinaSSOHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSinaSSOHandler.h; sourceTree = "<group>"; };
+		293DE46A1BB9850000E5FAEE /* WBHttpRequest+WeiboShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboShare.h"; sourceTree = "<group>"; };
+		293DE46B1BB9850000E5FAEE /* WBHttpRequest+WeiboToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboToken.h"; sourceTree = "<group>"; };
+		293DE46C1BB9850000E5FAEE /* WBHttpRequest+WeiboUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboUser.h"; sourceTree = "<group>"; };
+		293DE46D1BB9850000E5FAEE /* WBHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBHttpRequest.h; sourceTree = "<group>"; };
+		293DE46E1BB9850000E5FAEE /* WBSDKBasicButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKBasicButton.h; sourceTree = "<group>"; };
+		293DE46F1BB9850000E5FAEE /* WBSDKCommentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKCommentButton.h; sourceTree = "<group>"; };
+		293DE4701BB9850000E5FAEE /* WBSDKRelationshipButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKRelationshipButton.h; sourceTree = "<group>"; };
+		293DE4711BB9850000E5FAEE /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WeiboSDK.bundle; sourceTree = "<group>"; };
+		293DE4721BB9850000E5FAEE /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
+		293DE4731BB9850000E5FAEE /* WeiboUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboUser.h; sourceTree = "<group>"; };
 		2956D9F51B6920A500E34536 /* HLCSettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCSettingTableViewCell.h; path = View/HLCSettingTableViewCell.h; sourceTree = "<group>"; };
 		2956D9F61B6920A500E34536 /* HLCSettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCSettingTableViewCell.m; path = View/HLCSettingTableViewCell.m; sourceTree = "<group>"; };
 		2956D9F81B692A5C00E34536 /* HLCLoanInputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCLoanInputTableViewCell.h; path = View/HLCLoanInputTableViewCell.h; sourceTree = "<group>"; };
@@ -75,7 +108,6 @@
 		295B352A1B5DD155006B9A0F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		295B35331B5DD155006B9A0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		295B35351B5DD155006B9A0F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		295B35381B5DD155006B9A0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		295B353E1B5DD155006B9A0F /* HouseLoanCalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HouseLoanCalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		295B35431B5DD155006B9A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		295B35441B5DD155006B9A0F /* HouseLoanCalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HouseLoanCalTests.m; sourceTree = "<group>"; };
@@ -140,12 +172,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				293DE43D1BB96B5C00E5FAEE /* ImageIO.framework in Frameworks */,
+				293DE4751BB9850000E5FAEE /* libWeiboSDK.a in Frameworks */,
 				298F16741BB5158900C73A6C /* libc++.tbd in Frameworks */,
 				29DAEE411BB2F13B00E7F82B /* libz.tbd in Frameworks */,
 				298F16721BB5156300C73A6C /* libsqlite3.tbd in Frameworks */,
 				29DAEE751BB3CEFF00E7F82B /* SystemConfiguration.framework in Frameworks */,
 				298F166F1BB510AA00C73A6C /* libSocialWechat.a in Frameworks */,
 				298F16701BB510AA00C73A6C /* libWeChatSDK.a in Frameworks */,
+				293DE4741BB9850000E5FAEE /* libSocialSinaSSO.a in Frameworks */,
 				29DAEE691BB3AD3700E7F82B /* libUMSocial_Sdk_4.2.3.a in Frameworks */,
 				29DAEE4C1BB3AD2300E7F82B /* libMobClickLibrary.a in Frameworks */,
 			);
@@ -155,12 +190,54 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				293DE4631BB9848700E5FAEE /* libSocialSinaSSO.a in Frameworks */,
+				293DE4641BB9848700E5FAEE /* libWeiboSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		293DE4551BB9848700E5FAEE /* SinaSSO */ = {
+			isa = PBXGroup;
+			children = (
+				293DE4561BB9848700E5FAEE /* libSocialSinaSSO.a */,
+				293DE4571BB9848700E5FAEE /* libWeiboSDK.a */,
+				293DE4581BB9848700E5FAEE /* UMSocialSinaSSOHandler.h */,
+				293DE4591BB9848700E5FAEE /* WBHttpRequest+WeiboShare.h */,
+				293DE45A1BB9848700E5FAEE /* WBHttpRequest+WeiboToken.h */,
+				293DE45B1BB9848700E5FAEE /* WBHttpRequest+WeiboUser.h */,
+				293DE45C1BB9848700E5FAEE /* WBHttpRequest.h */,
+				293DE45D1BB9848700E5FAEE /* WBSDKBasicButton.h */,
+				293DE45E1BB9848700E5FAEE /* WBSDKCommentButton.h */,
+				293DE45F1BB9848700E5FAEE /* WBSDKRelationshipButton.h */,
+				293DE4601BB9848700E5FAEE /* WeiboSDK.bundle */,
+				293DE4611BB9848700E5FAEE /* WeiboSDK.h */,
+				293DE4621BB9848700E5FAEE /* WeiboUser.h */,
+			);
+			path = SinaSSO;
+			sourceTree = "<group>";
+		};
+		293DE4661BB9850000E5FAEE /* SinaSSO */ = {
+			isa = PBXGroup;
+			children = (
+				293DE4671BB9850000E5FAEE /* libSocialSinaSSO.a */,
+				293DE4681BB9850000E5FAEE /* libWeiboSDK.a */,
+				293DE4691BB9850000E5FAEE /* UMSocialSinaSSOHandler.h */,
+				293DE46A1BB9850000E5FAEE /* WBHttpRequest+WeiboShare.h */,
+				293DE46B1BB9850000E5FAEE /* WBHttpRequest+WeiboToken.h */,
+				293DE46C1BB9850000E5FAEE /* WBHttpRequest+WeiboUser.h */,
+				293DE46D1BB9850000E5FAEE /* WBHttpRequest.h */,
+				293DE46E1BB9850000E5FAEE /* WBSDKBasicButton.h */,
+				293DE46F1BB9850000E5FAEE /* WBSDKCommentButton.h */,
+				293DE4701BB9850000E5FAEE /* WBSDKRelationshipButton.h */,
+				293DE4711BB9850000E5FAEE /* WeiboSDK.bundle */,
+				293DE4721BB9850000E5FAEE /* WeiboSDK.h */,
+				293DE4731BB9850000E5FAEE /* WeiboUser.h */,
+			);
+			path = SinaSSO;
+			sourceTree = "<group>";
+		};
 		295B351C1B5DD155006B9A0F = {
 			isa = PBXGroup;
 			children = (
@@ -194,7 +271,6 @@
 				295B35571B5DE20E006B9A0F /* HLCMacros.h */,
 				295B35321B5DD155006B9A0F /* Main.storyboard */,
 				295B35351B5DD155006B9A0F /* Images.xcassets */,
-				295B35371B5DD155006B9A0F /* LaunchScreen.xib */,
 				295B35281B5DD155006B9A0F /* Supporting Files */,
 			);
 			path = HouseLoanCal;
@@ -212,6 +288,7 @@
 		295B35411B5DD155006B9A0F /* HouseLoanCalTests */ = {
 			isa = PBXGroup;
 			children = (
+				293DE4551BB9848700E5FAEE /* SinaSSO */,
 				295B35441B5DD155006B9A0F /* HouseLoanCalTests.m */,
 				295B35421B5DD155006B9A0F /* Supporting Files */,
 			);
@@ -288,9 +365,10 @@
 		29DAEE351BB2E6FC00E7F82B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				29DAEE741BB3CEFF00E7F82B /* SystemConfiguration.framework */,
+				293DE43C1BB96B5C00E5FAEE /* ImageIO.framework */,
 				298F16731BB5158900C73A6C /* libc++.tbd */,
 				298F16711BB5156300C73A6C /* libsqlite3.tbd */,
-				29DAEE741BB3CEFF00E7F82B /* SystemConfiguration.framework */,
 				29DAEE401BB2F13B00E7F82B /* libz.tbd */,
 			);
 			name = Frameworks;
@@ -354,6 +432,7 @@
 		29DAEE731BB3CD7D00E7F82B /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				293DE4661BB9850000E5FAEE /* SinaSSO */,
 				298F16691BB510AA00C73A6C /* Wechat */,
 				29DAEE481BB3AD2300E7F82B /* UMAnalytics_Sdk_3.5.16 */,
 				29DAEE4D1BB3AD3700E7F82B /* UMSocial_Sdk_4.2.3 */,
@@ -410,6 +489,7 @@
 				TargetAttributes = {
 					295B35241B5DD155006B9A0F = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 5F3JGZU2LG;
 					};
 					295B353D1B5DD155006B9A0F = {
 						CreatedOnToolsVersion = 6.4;
@@ -449,9 +529,9 @@
 				29DAEE6F1BB3AD3700E7F82B /* UMSLoginViewController.xib in Resources */,
 				29DAEE6C1BB3AD3700E7F82B /* UMSCommentInputControlleriPad.xib in Resources */,
 				29DAEE6E1BB3AD3700E7F82B /* UMShareEditViewControlleriPad.xib in Resources */,
-				295B35391B5DD155006B9A0F /* LaunchScreen.xib in Resources */,
 				29DAEE681BB3AD3700E7F82B /* UMSocialLocalizable.strings in Resources */,
 				295B35361B5DD155006B9A0F /* Images.xcassets in Resources */,
+				293DE4761BB9850000E5FAEE /* WeiboSDK.bundle in Resources */,
 				29DAEE701BB3AD3700E7F82B /* UMSnsAccountViewController.xib in Resources */,
 				29DAEE711BB3AD3700E7F82B /* UMSShareListController.xib in Resources */,
 				29DAEE721BB3AD3700E7F82B /* UMSocialSDKResourcesNew.bundle in Resources */,
@@ -462,6 +542,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				293DE4651BB9848700E5FAEE /* WeiboSDK.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,14 +599,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		295B35371B5DD155006B9A0F /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				295B35381B5DD155006B9A0F /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
 		29DAEE4E1BB3AD3700E7F82B /* UMSocialLocalizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -579,7 +652,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "116f37a3-6fa2-438c-8fe1-6b2da823a8e3";
+				PROVISIONING_PROFILE = "dda02244-2abc-4493-b83b-c2f8503e5967";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -617,7 +690,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "116f37a3-6fa2-438c-8fe1-6b2da823a8e3";
+				PROVISIONING_PROFILE = "dda02244-2abc-4493-b83b-c2f8503e5967";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -627,10 +700,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yang Xu (8JG97H3BQR)";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yang Xu (8JG97H3BQR)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = HouseLoanCal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -638,10 +713,12 @@
 					"$(PROJECT_DIR)/UMAnalytics_Sdk_3.5.16",
 					"$(PROJECT_DIR)/UMSocial_Sdk_4.2.3",
 					"$(PROJECT_DIR)/Wechat",
+					"$(PROJECT_DIR)/SinaSSO",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xuyang.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "116f37a3-6fa2-438c-8fe1-6b2da823a8e3";
+				PROVISIONING_PROFILE = "dda02244-2abc-4493-b83b-c2f8503e5967";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -650,10 +727,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yang Xu (8JG97H3BQR)";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yang Xu (8JG97H3BQR)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = HouseLoanCal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -661,10 +740,13 @@
 					"$(PROJECT_DIR)/UMAnalytics_Sdk_3.5.16",
 					"$(PROJECT_DIR)/UMSocial_Sdk_4.2.3",
 					"$(PROJECT_DIR)/Wechat",
+					"$(PROJECT_DIR)/SinaSSO",
+					"$(PROJECT_DIR)/Pods/WeiboSDK/libWeiboSDK",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xuyang.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "116f37a3-6fa2-438c-8fe1-6b2da823a8e3";
+				PROVISIONING_PROFILE = "dda02244-2abc-4493-b83b-c2f8503e5967";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -673,6 +755,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yang Xu (8JG97H3BQR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yang Xu (8JG97H3BQR)";
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -680,8 +764,13 @@
 				);
 				INFOPLIST_FILE = HouseLoanCalTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HouseLoanCalTests/SinaSSO",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xuyang.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HouseLoanCal.app/HouseLoanCal";
 			};
 			name = Debug;
@@ -690,11 +779,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yang Xu (8JG97H3BQR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yang Xu (8JG97H3BQR)";
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = HouseLoanCalTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HouseLoanCalTests/SinaSSO",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xuyang.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HouseLoanCal.app/HouseLoanCal";
 			};
 			name = Release;

@@ -9,12 +9,16 @@
 #import "HLCAppDelegate.h"
 
 //
+#import "HLCMacros.h"
+
+//
 #import "HLCRootViewController.h"
 
 //
 #import "MobClick.h"
 #import "UMSocial.h"
 #import "UMSocialWechatHandler.h"
+#import "UMSocialSinaSSOHandler.h"
 
 @interface HLCAppDelegate ()
 
@@ -28,18 +32,27 @@
     self.window.rootViewController = [[HLCRootViewController alloc] init];
     [self.window makeKeyAndVisible];
     
-    // 设置statusBar文字为白色
+    // 设置 statusBar 文字为亮色
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
     // 友盟
     [MobClick startWithAppkey:@"5602ae2de0f55ace17001418" reportPolicy:BATCH channelId:nil];
     [UMSocialData setAppKey:@"5602ae2de0f55ace17001418"];
+    
     // 设置微信AppId, AppSecret, 分享Url
-    [UMSocialWechatHandler setWXAppId:@"wxd7b7a0dbc529ac35" appSecret:@"7cb6396a8d57e00a022319ebf14d95bc" url:@"http://www.baidu.com"];
+    [UMSocialWechatHandler setWXAppId:@"wxd7b7a0dbc529ac35" appSecret:@"7cb6396a8d57e00a022319ebf14d95bc" url:kHLCAppStore];
+    
+    // 配置微信好友、微信朋友圈点击跳转链接
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = kHLCAppStore;
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = kHLCAppStore;
+    
+    // 设置新浪微博回调地址
+    [UMSocialSinaSSOHandler openNewSinaSSOWithRedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
     
     return YES;
 }
 
+// 友盟回调方法
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     return  [UMSocialSnsService handleOpenURL:url];
 }

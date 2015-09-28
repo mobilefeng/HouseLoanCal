@@ -25,9 +25,21 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>weixin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>wxd7b7a0dbc529ac35</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>weibo</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wb2486245831</string>
 			</array>
 		</dict>
 	</array>
@@ -38,6 +50,8 @@
 		<string>weixin</string>
 		<string>wechat</string>
 		<string>wxd7b7a0dbc529ac35</string>
+		<string>sinaweibo</string>
+		<string>sinaweibohd</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -46,8 +60,6 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
