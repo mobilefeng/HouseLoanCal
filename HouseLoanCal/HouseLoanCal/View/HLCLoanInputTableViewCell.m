@@ -102,8 +102,6 @@
                 [self.contentView addSubview:_segmentedControl];
             }
                 break;
-            default:
-                break;
         }
         [self initInputAccessoryView];
     }

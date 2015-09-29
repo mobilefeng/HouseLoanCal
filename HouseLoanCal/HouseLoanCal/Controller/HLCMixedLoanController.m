@@ -145,8 +145,6 @@
             }
         }
             break;
-        default:
-            break;
     }
     
     return numOfRows;
@@ -285,8 +283,6 @@
                     return cell;
                 }
                     break;
-                default:
-                    break;
             }
         }
             break;
@@ -329,8 +325,6 @@
                         return cell;
                     }
                         break;
-                    default:
-                        break;
                 }
             }
         }
@@ -353,8 +347,6 @@
                             [cell setTitle:@"每期本金(元)"];
                         }
                             break;
-                        default:
-                            break;
                     }
                     [cell setDetail:[moneyFormatter stringFromNumber:
                                      [NSNumber numberWithDouble:(self.profundLoanModel.eachEqual.doubleValue + self.commerLoanModel.eachEqual.doubleValue)]]];
@@ -375,8 +367,6 @@
                         case HLCLoanTypeEqualPrincipal: {
                             [cell setDetail:@"还款/利息(元)"];
                         }
-                            break;
-                        default:
                             break;
                     }
                     return cell;
@@ -400,8 +390,6 @@
                 }
             }
         }
-            break;
-        default:
             break;
     }
     
@@ -457,9 +445,6 @@
             self.commerLoanModel.loanRate = [NSNumber numberWithDouble:([self.loanCommerRate doubleValue]*[self.loanCommerDiscount doubleValue])];
         }
             break;
-        
-        default:
-            break;
     }
 }
 
@@ -477,8 +462,6 @@
             self.profundLoanModel.loanType = HLCLoanTypeEqualPrincipal;
             self.commerLoanModel.loanType = HLCLoanTypeEqualPrincipal;
         }
-        default:
-            break;
     }
     if (self.profundLoanModel.isInputValid && self.commerLoanModel.isInputValid && self.isShowOutput) {
         [self calculateAndReloadData];

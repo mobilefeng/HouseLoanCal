@@ -51,8 +51,6 @@
                 self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             }
                 break;
-            default:
-                break;
         }
     }
     

@@ -102,8 +102,6 @@
             return cell;
         }
             break;
-        default:
-            break;
     }
     
     return [[UITableViewCell alloc] init];
@@ -124,8 +122,6 @@
                                              shareImage:[UIImage imageNamed:@"shareAppIcon"] shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatSession, UMShareToWechatTimeline, UMShareToSina, nil]
                                                delegate:self];
         }
-            break;
-        default:
             break;
     }
 }

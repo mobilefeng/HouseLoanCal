@@ -157,8 +157,6 @@
             self.eachDiff = self.eachPrincipalPlusInterest;
         }
             break;
-        default:
-            break;
     }
     
     // 累计支付利息

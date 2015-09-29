@@ -47,8 +47,6 @@
                 _titleLabel.font = [UIFont systemFontOfSize:kHLCCellTitleSmallFont];
             }
                 break;
-            default:
-                break;
         }
         [self.contentView addSubview:_titleLabel];
         
@@ -66,8 +64,6 @@
             case HLCLoanOutputTableViewCellStyleSmall: {
                 _detailLabel.font = [UIFont systemFontOfSize:kHLCCellDetailSmallFont];
             }
-                break;
-            default:
                 break;
         }
         [self.contentView addSubview:_detailLabel];

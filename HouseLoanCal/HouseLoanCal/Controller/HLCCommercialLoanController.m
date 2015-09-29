@@ -124,8 +124,6 @@
             }
         }
             break;
-        default:
-            break;
     }
     
     return numOfRows;
@@ -238,8 +236,6 @@
                     return cell;
                 }
                     break;
-                default:
-                    break;
             }
         }
             break;
@@ -291,8 +287,6 @@
                         return cell;
                     }
                         break;
-                    default:
-                        break;
                 }
             }
         }
@@ -315,8 +309,6 @@
                             [cell setTitle:@"每期本金(元)"];
                         }
                             break;
-                        default:
-                            break;
                     }
                     [cell setDetail:[moneyFormatter stringFromNumber:self.loanModel.eachEqual]];
                     [cell addTopSeparatorLineLayer];
@@ -337,8 +329,6 @@
                             [cell setDetail:@"还款/利息(元)"];
                         }
                             break;
-                        default:
-                            break;
                     }
                     return cell;
                 } else {
@@ -355,8 +345,6 @@
                 }
             }
         }
-            break;
-        default:
             break;
     }
     
@@ -403,8 +391,6 @@
             self.loanModel.loanRate = [NSNumber numberWithDouble:([self.loanRateNoDiscount doubleValue]*[self.loanDiscount doubleValue])];
         }
             break;
-        default:
-            break;
     }
 }
 
@@ -420,8 +406,6 @@
         case 1: {
             self.loanModel.loanType = HLCLoanTypeEqualPrincipal;
         }
-        default:
-            break;
     }
     if (self.loanModel.isInputValid && self.isShowOutput) {
         [self calculateAndReloadData];
