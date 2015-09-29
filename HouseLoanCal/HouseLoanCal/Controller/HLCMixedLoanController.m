@@ -18,6 +18,9 @@
 // Model
 #import "HLCLoanModel.h"
 
+// 友盟统计
+#import "MobClick.h"
+
 @interface HLCMixedLoanController() <HLCLoanInputTableViewCellDelegate>
 
 //// 数据模型
@@ -100,6 +103,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationItem setTitle:@"组合贷款"];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"PageMixed"];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"PageMixed"];
 }
 
 #pragma mark - UITableView DataSource & Delegate
@@ -399,11 +412,13 @@
 
 // 重置按钮被点击后的操作
 - (void)resetButtonDidClick:(UIButton *)button {
+    [MobClick event:kHLCMixedResetClick];
     [self resetAndReloadData];
 }
 
 // 计算按钮被点击后的操作
 - (void)calculateButtonDidClick:(UIButton *)button {
+    [MobClick event:kHLCMixedCalClick];
     [self calculateAndReloadData];
 }
 

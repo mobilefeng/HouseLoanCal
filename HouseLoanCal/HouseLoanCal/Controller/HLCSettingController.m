@@ -11,6 +11,11 @@
 //
 #import "HLCMacros.h"
 #import "HLCSettingTableViewCell.h"
+
+// 友盟统计
+#import "MobClick.h"
+
+// 友盟分享
 #import "UMSocial.h"
 
 @interface HLCSettingController ()<UMSocialUIDelegate>
@@ -34,6 +39,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationItem setTitle:@"设置"];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"PageSetting"];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"PageSetting"];
 }
 
 #pragma mark - DateSource
@@ -97,10 +112,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
         case kHLCSettingComment: {
+            [MobClick event:kHLCCommentClick];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kHLCAppStore]];
         }
             break;
         case kHLCSettingRecommend: {
+            [MobClick event:kHLCRecommendClick];
             [UMSocialSnsService presentSnsIconSheetView:self
                                                  appKey:@"5602ae2de0f55ace17001418"
                                               shareText:@"极简房贷计算器 From @xuyang"

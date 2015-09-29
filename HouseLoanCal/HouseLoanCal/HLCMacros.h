@@ -9,14 +9,19 @@
 #ifndef HouseLoanCal_HLCMacros_h
 #define HouseLoanCal_HLCMacros_h
 
+
+
+#pragma mark - 系统
 // ___________________________________________________________
 //
 // 版本号
-#define HLC_APP_VERSION ([[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"])
+#define HLC_APP_VERSION     ([[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"])
 // App Store 链接
-#define kHLCAppStore @"https://itunes.apple.com/cn/app/id1043888133"
+#define kHLCAppStore        @"https://itunes.apple.com/cn/app/id1043888133"
 
 
+
+#pragma mark - 颜色
 // ___________________________________________________________
 //
 // RGB颜色
@@ -61,6 +66,9 @@
 // SegmentedControl 颜色
 #define kHLCSegmentedControlColor   (UIColorFromRGB(0x2D7DA4))
 
+
+
+#pragma mark - 字体
 // ___________________________________________________________
 //
 // NavBar 标题字体
@@ -79,6 +87,8 @@
 #define kHLCCellDetailSmallFont     (14.0)
 
 
+
+#pragma mark - 尺寸
 // ___________________________________________________________
 //
 // Cell 高度
@@ -86,6 +96,35 @@
 
 // Cell Header 高度
 #define kHLCHeightForCellSeparator  (16.0)
+
+
+
+#pragma mark - 友盟事件ID
+// ___________________________________________________________
+//
+// 公积金贷款计算点击
+#define kHLCProfundCalClick         @"Profund_Cal_Click"
+
+// 公积金贷款重置点击
+#define kHLCProfundResetClick       @"Profund_Reset_Click"
+
+// 商业贷款计算点击
+#define kHLCCommerCalClick          @"Commer_Cal_Click"
+
+// 商业贷款重置点击
+#define kHLCCommerResetClick        @"Commer_Reset_Click"
+
+// 组合贷款计算点击
+#define kHLCMixedCalClick           @"Mixed_Cal_Click"
+
+// 组合贷款重置点击
+#define kHLCMixedResetClick         @"Mixed_Reset_Click"
+
+// 五星好评点击
+#define kHLCCommentClick            @"Comment_Click"
+
+// 推荐好友点击
+#define kHLCRecommendClick          @"Recommend_Click"
 
 
 #endif

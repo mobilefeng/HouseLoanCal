@@ -18,6 +18,9 @@
 // Model
 #import "HLCLoanModel.h"
 
+// 友盟统计
+#import "MobClick.h"
+
 
 @interface HLCProvidentFundLoanController() <HLCLoanInputTableViewCellDelegate>
 
@@ -67,6 +70,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationItem setTitle:@"公积金贷款"];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"PageProfund"];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"PageProfund"];
 }
 
 #pragma mark - UITableView DataSource & Delegate
@@ -320,11 +333,13 @@
 
 // 重置按钮被点击后的操作
 - (void)resetButtonDidClick:(UIButton *)button {
+    [MobClick event:kHLCProfundResetClick];
     [self resetAndReloadData];
 }
 
 // 计算按钮被点击后的操作
 - (void)calculateButtonDidClick:(UIButton *)button {
+    [MobClick event:kHLCProfundCalClick];
     [self calculateAndReloadData];
 }
 

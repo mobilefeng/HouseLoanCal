@@ -715,7 +715,7 @@
 					"$(PROJECT_DIR)/Wechat",
 					"$(PROJECT_DIR)/SinaSSO",
 				);
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xuyang.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "dda02244-2abc-4493-b83b-c2f8503e5967";
@@ -743,7 +743,7 @@
 					"$(PROJECT_DIR)/SinaSSO",
 					"$(PROJECT_DIR)/Pods/WeiboSDK/libWeiboSDK",
 				);
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xuyang.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "dda02244-2abc-4493-b83b-c2f8503e5967";

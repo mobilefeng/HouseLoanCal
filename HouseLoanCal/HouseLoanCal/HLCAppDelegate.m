@@ -49,6 +49,9 @@
     // 设置新浪微博回调地址
     [UMSocialSinaSSOHandler openNewSinaSSOWithRedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
     
+    // 打开友盟统计调试模式
+    [MobClick setLogEnabled:YES];
+    
     return YES;
 }
 
