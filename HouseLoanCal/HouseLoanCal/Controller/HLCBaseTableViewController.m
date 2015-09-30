@@ -8,7 +8,7 @@
 
 #import "HLCBaseTableViewController.h"
 
-//
+// Macro
 #import "HLCMacros.h"
 
 @implementation HLCBaseTableViewController
@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 设置tableView属性
     self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     self.tableView.backgroundView = [[UIView alloc] init];
     self.tableView.backgroundView.backgroundColor = kHLCBackgroundColor;

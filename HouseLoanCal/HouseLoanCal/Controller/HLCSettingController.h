@@ -9,7 +9,7 @@
 #import "HLCBaseTableViewController.h"
 
 /*
- *  Aboutus Section Row
+ *  Section Row
  */
 enum {
     // 版本

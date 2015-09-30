@@ -48,7 +48,9 @@
         UIImage *tabImage = [UIImage imageNamed:@"icon_commer_normal"];
         UIImage *tabSelectImage = [UIImage imageNamed:@"icon_commer_height"];
         tabSelectImage = [tabSelectImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"商业" image:tabImage selectedImage:tabSelectImage];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"商业"
+                                                        image:tabImage
+                                                selectedImage:tabSelectImage];
         
         // 初始化数据模型
         self.loanModel = [[HLCLoanModel alloc] init];
@@ -130,7 +132,8 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ( (kHLCLoanSectionInput == indexPath.section && kHLCCommercialInputCount == indexPath.row) || (kHLCLoanSectionOutputSummary == indexPath.section && kHLCCommercialSummaryCount == indexPath.row)) {
+    if ( (kHLCLoanSectionInput == indexPath.section && kHLCCommercialInputCount == indexPath.row) ||
+        (kHLCLoanSectionOutputSummary == indexPath.section && kHLCCommercialSummaryCount == indexPath.row)) {
         return kHLCHeightForCellSeparator;
     }
     return kHLCHeightForCell;
@@ -151,7 +154,7 @@
     [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"]];
     
     switch (section) {
-            // 输入模块
+        // 输入模块
         case kHLCLoanSectionInput: {
             switch (row) {
                 case kHLCCommercialInputValue: {
@@ -239,7 +242,7 @@
             }
         }
             break;
-            // 输出结果概览
+        // 输出结果概览
         case kHLCLoanSectionOutputSummary: {
             if (self.isShowOutput) {
                 switch (row) {
@@ -291,7 +294,7 @@
             }
         }
             break;
-            // 输出结果详细
+        // 输出结果详细
         case kHLCLoanSectionOutputDetail: {
             if (self.isShowOutput) {
                 if (kHLCCommercialDetailEveryMonthEqual == row) {

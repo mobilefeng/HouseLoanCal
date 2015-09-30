@@ -252,7 +252,7 @@
 
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     NSNumber *pickerNum = [_pickerArray objectAtIndex:row];
-    if (0 == row) {
+    if (row == 0) {
         return [NSString stringWithFormat:@"%.1f年（%.0f期）", pickerNum.doubleValue, pickerNum.doubleValue*12];
     } else {
         return [NSString stringWithFormat:@"%.0f年（%.0f期）", pickerNum.doubleValue, pickerNum.doubleValue*12];

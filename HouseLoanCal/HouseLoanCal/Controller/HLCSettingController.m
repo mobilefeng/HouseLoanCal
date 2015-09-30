@@ -8,8 +8,10 @@
 
 #import "HLCSettingController.h"
 
-//
+// Macro
 #import "HLCMacros.h"
+
+// View
 #import "HLCSettingTableViewCell.h"
 
 // 友盟统计
@@ -18,18 +20,23 @@
 // 友盟分享
 #import "UMSocial.h"
 
-@interface HLCSettingController ()<UMSocialUIDelegate>
+@interface HLCSettingController () <UMSocialUIDelegate>
 
 @end
 
+
 @implementation HLCSettingController
+
+#pragma mark - Init
 
 - (instancetype)initViewController {
     if (self = [super initViewController]) {
         UIImage *tabImage = [UIImage imageNamed:@"icon_setting_normal"];
         UIImage *tabSelectImage = [UIImage imageNamed:@"icon_setting_height"];
         tabSelectImage = [tabSelectImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"设置" image:tabImage selectedImage:tabSelectImage];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"设置"
+                                                        image:tabImage
+                                                selectedImage:tabSelectImage];
         }
     return self;
 }
@@ -127,10 +134,10 @@
 }
 
 -(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response {
-    //根据 responseCode 得到发送结果,如果分享成功
+    // 根据 responseCode 得到发送结果,如果分享成功
     if(response.responseCode == UMSResponseCodeSuccess)
     {
-        //得到分享到的平台名
+        // 得到分享到的平台名
         NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
     }
 }

@@ -10,6 +10,7 @@
 
 #define kHLCTenThousand     (10000.0)
 
+
 @interface HLCLoanModel()
 
 // 累计支付利息
@@ -63,7 +64,11 @@
 }
 
 - (id)init {
-    return [self initWithPrincipal:[NSNumber numberWithDouble:0.0] period:[NSNumber numberWithDouble:30.0] date:[NSDate date] rate:[NSNumber numberWithDouble:5.0] withType:HLCLoanTypeEqualPrincipal];
+    return [self initWithPrincipal:[NSNumber numberWithDouble:0.0]
+                            period:[NSNumber numberWithDouble:30.0]
+                              date:[NSDate date]
+                              rate:[NSNumber numberWithDouble:5.0]
+                          withType:HLCLoanTypeEqualPrincipal];
 }
 
 - (NSNumber *)cumulativeInterest {
@@ -75,7 +80,10 @@
 }
 
 - (BOOL)isInputValid {
-    return (self.loanPrincipal.doubleValue>0.0 && self.loanPeriod && self.loanDate && self.loanRate.doubleValue!=0.0 && self.loanType);
+    return (self.loanPrincipal.doubleValue>0.0 &&
+            self.loanPeriod && self.loanDate &&
+            self.loanRate.doubleValue!=0.0 &&
+            self.loanType);
 }
 
 - (void)calculate {
@@ -87,6 +95,7 @@
     [self.eachPrincipalPlusInterest removeAllObjects];
     [self.eachDiff removeAllObjects];
     
+    // 计算还款期数、月利率、贷款金额（元）
     self.monthOfLoan = self.loanPeriod.doubleValue * 12;
     double monthRate = self.loanRate.doubleValue / (12*100);
     double principalInTenThousand = self.loanPrincipal.doubleValue * kHLCTenThousand;
@@ -103,6 +112,7 @@
         [self.eachMonth insertObject:monthDate atIndex:i];
     }
     
+    // 计算每期本金、利息、本息
     switch (self.loanType) {
         // 等额本息
         case HLCLoanTypeEqualPrincipalPlusInterest: {
@@ -159,7 +169,7 @@
             break;
     }
     
-    // 累计支付利息
+    // 计算累计支付利息
     double interestTotal = 0.0;
     for (int i=0; i<self.monthOfLoan; i++) {
         NSNumber *interest = self.eachInterest[i];
@@ -167,7 +177,7 @@
     }
     self.cumulativeInterest = [NSNumber numberWithDouble:interestTotal];
     
-    // 累计支付总额
+    // 计算累计支付总额
     self.cumulativePrincipalPlusInterest = [NSNumber numberWithDouble:(principalInTenThousand+self.cumulativeInterest.doubleValue)];
 }
 

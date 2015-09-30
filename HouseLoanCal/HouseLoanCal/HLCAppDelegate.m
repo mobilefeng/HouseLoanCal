@@ -35,18 +35,21 @@
     // 设置 statusBar 文字为亮色
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
-    // 友盟
-    [MobClick startWithAppkey:@"5602ae2de0f55ace17001418" reportPolicy:BATCH channelId:nil];
+    // 友盟统计
+    [MobClick startWithAppkey:@"5602ae2de0f55ace17001418"
+                 reportPolicy:BATCH
+                    channelId:nil];
+    // 友盟分享
     [UMSocialData setAppKey:@"5602ae2de0f55ace17001418"];
     
-    // 设置微信AppId, AppSecret, 分享Url
-    [UMSocialWechatHandler setWXAppId:@"wxd7b7a0dbc529ac35" appSecret:@"7cb6396a8d57e00a022319ebf14d95bc" url:kHLCAppStore];
-    
-    // 配置微信好友、微信朋友圈点击跳转链接
+    // 配置微信分享
+    [UMSocialWechatHandler setWXAppId:@"wxd7b7a0dbc529ac35"
+                            appSecret:@"7cb6396a8d57e00a022319ebf14d95bc"
+                                  url:kHLCAppStore];
     [UMSocialData defaultData].extConfig.wechatSessionData.url = kHLCAppStore;
     [UMSocialData defaultData].extConfig.wechatTimelineData.url = kHLCAppStore;
     
-    // 设置新浪微博回调地址
+    // 配置新浪微博分享
     [UMSocialSinaSSOHandler openNewSinaSSOWithRedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
     
     // 打开友盟统计调试模式
@@ -55,7 +58,8 @@
     return YES;
 }
 
-// 友盟回调方法
+
+// 友盟回调
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     return  [UMSocialSnsService handleOpenURL:url];
 }
@@ -66,6 +70,7 @@
          annotation:(id)annotation {
     return  [UMSocialSnsService handleOpenURL:url];
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

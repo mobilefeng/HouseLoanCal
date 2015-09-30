@@ -23,26 +23,11 @@
 
 @interface HLCMixedLoanController() <HLCLoanInputTableViewCellDelegate>
 
-//// 数据模型
-//@property (nonatomic, retain) HLCLoanModel *loanModel;
-//
-//// 公积金贷款金额
-//@property (nonatomic, strong) NSNumber *loanProfundValue;
-//
-//// 公积金贷款利率
-//@property (nonatomic, strong) NSNumber *loanProfundRate;
-//
-//// 商业贷款金额
-//@property (nonatomic, strong) NSNumber *loanCommerValue;
-//
 // 商业贷款利率
 @property (nonatomic, strong) NSNumber *loanCommerRate;
 
 // 商业贷款折扣
 @property (nonatomic, strong) NSNumber *loanCommerDiscount;
-//
-//// 商业贷款折扣利率
-//@property (nonatomic, strong) NSNumber *loanCommerDiscountRate;
 
 // 公积金贷款数据模型
 @property (nonatomic, retain) HLCLoanModel *profundLoanModel;
@@ -62,7 +47,9 @@
         UIImage *tabImage = [UIImage imageNamed:@"icon_mixed_normal"];
         UIImage *tabSelectImage = [UIImage imageNamed:@"icon_mixed_height"];
         tabSelectImage = [tabSelectImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"组合" image:tabImage selectedImage:tabSelectImage];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"组合"
+                                                        image:tabImage
+                                                selectedImage:tabSelectImage];
         
         // 初始化数据模型
         self.profundLoanModel = [[HLCLoanModel alloc] init];
@@ -151,7 +138,8 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ( (kHLCLoanSectionInput == indexPath.section && kHLCMixedInputCount == indexPath.row) || (kHLCLoanSectionOutputSummary == indexPath.section && kHLCMixedSummaryCount == indexPath.row)) {
+    if ( (kHLCLoanSectionInput == indexPath.section && kHLCMixedInputCount == indexPath.row) ||
+        (kHLCLoanSectionOutputSummary == indexPath.section && kHLCMixedSummaryCount == indexPath.row)) {
         return kHLCHeightForCellSeparator;
     }
     return kHLCHeightForCell;
@@ -172,7 +160,7 @@
     [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"]];
     
     switch (section) {
-            // 输入模块
+        // 输入模块
         case kHLCLoanSectionInput: {
             switch (row) {
                 case kHLCMixedInputProfundValue: {
@@ -286,7 +274,7 @@
             }
         }
             break;
-            // 输出结果概览
+        // 输出结果概览
         case kHLCLoanSectionOutputSummary: {
             if (self.isShowOutput) {
                 switch (row) {
@@ -329,7 +317,7 @@
             }
         }
             break;
-            // 输出结果详细
+        // 输出结果详细
         case kHLCLoanSectionOutputDetail: {
             if (self.isShowOutput) {
                 if (kHLCMixedDetailEveryMonthEqual == row) {

@@ -42,7 +42,9 @@
         UIImage *tabImage = [UIImage imageNamed:@"icon_profund_normal"];
         UIImage *tabSelectImage = [UIImage imageNamed:@"icon_profund_height"];
         tabSelectImage = [tabSelectImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"公积金" image:tabImage selectedImage:tabSelectImage];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"公积金"
+                                                        image:tabImage
+                                                selectedImage:tabSelectImage];
         
         // 初始化数据模型
         self.loanModel = [[HLCLoanModel alloc] init];
@@ -118,7 +120,8 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ( (kHLCLoanSectionInput == indexPath.section && kHLCProfundInputCount == indexPath.row) || (kHLCLoanSectionOutputSummary == indexPath.section && kHLCProfundSummaryCount == indexPath.row)) {
+    if ( (kHLCLoanSectionInput == indexPath.section && kHLCProfundInputCount == indexPath.row) ||
+        (kHLCLoanSectionOutputSummary == indexPath.section && kHLCProfundSummaryCount == indexPath.row) ) {
         return kHLCHeightForCellSeparator;
     }
     return kHLCHeightForCell;
