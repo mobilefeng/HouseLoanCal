@@ -47,11 +47,17 @@
 	<string>1.0.0.0</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+        <!-- 微信 URL Scheme 白名单-->
 		<string>weixin</string>
 		<string>wechat</string>
 		<string>wxd7b7a0dbc529ac35</string>
+        
+        <!-- 新浪微博 URL Scheme 白名单-->
 		<string>sinaweibo</string>
 		<string>sinaweibohd</string>
+        <string>sinaweibosso</string>
+        <string>weibosdk</string>
+        <string>weibosdk2.5</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
