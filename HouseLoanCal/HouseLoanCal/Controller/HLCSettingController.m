@@ -93,7 +93,7 @@
             if (!cell) {
                 cell = [[HLCSettingTableViewCell alloc] initWithHLCStyle:(HLCSettingTableViewCellStyleAccessory) reuseIdentifier:scoreCellIndentifier];
             }
-            [cell setTitle:@"五星好评"];
+            [cell setTitle:@"用户评价"];
             
             return cell;
         }
@@ -125,7 +125,7 @@
             [MobClick event:kHLCRecommendClick];
             [UMSocialSnsService presentSnsIconSheetView:self
                                                  appKey:@"5602ae2de0f55ace17001418"
-                                              shareText:@"极简房贷计算器 From XuYang"
+                                              shareText:@"极简房贷计算器"
                                              shareImage:[UIImage imageNamed:@"shareAppIcon"] shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatSession, UMShareToWechatTimeline, UMShareToSina, nil]
                                                delegate:self];
         }
