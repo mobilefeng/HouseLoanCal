@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2902B15C1B78934F0027D13E /* HLCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2902B15B1B78934F0027D13E /* HLCTextField.m */; };
 		291272E41B7DB81B00679251 /* HLCLoanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 291272E31B7DB81B00679251 /* HLCLoanModel.m */; };
+		292CB4B61BC6369B003C0897 /* HouseLoanCalUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 292CB4B51BC6369B003C0897 /* HouseLoanCalUITests.m */; };
 		292EF7D71BBBA482004A89D9 /* libSocialSinaSSO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 292EF7C91BBBA482004A89D9 /* libSocialSinaSSO.a */; settings = {ASSET_TAGS = (); }; };
 		292EF7D81BBBA482004A89D9 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 292EF7CA1BBBA482004A89D9 /* libWeiboSDK.a */; settings = {ASSET_TAGS = (); }; };
 		292EF7D91BBBA482004A89D9 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 292EF7D41BBBA482004A89D9 /* WeiboSDK.bundle */; settings = {ASSET_TAGS = (); }; };
@@ -52,6 +53,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		292CB4B81BC6369B003C0897 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 295B351D1B5DD155006B9A0F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 295B35241B5DD155006B9A0F;
+			remoteInfo = HouseLoanCal;
+		};
 		295B353F1B5DD155006B9A0F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 295B351D1B5DD155006B9A0F /* Project object */;
@@ -66,6 +74,9 @@
 		2902B15B1B78934F0027D13E /* HLCTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCTextField.m; path = View/HLCTextField.m; sourceTree = "<group>"; };
 		291272E21B7DB81B00679251 /* HLCLoanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLCLoanModel.h; path = Model/HLCLoanModel.h; sourceTree = "<group>"; };
 		291272E31B7DB81B00679251 /* HLCLoanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLCLoanModel.m; path = Model/HLCLoanModel.m; sourceTree = "<group>"; };
+		292CB4B31BC6369B003C0897 /* HouseLoanCalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HouseLoanCalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		292CB4B51BC6369B003C0897 /* HouseLoanCalUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HouseLoanCalUITests.m; sourceTree = "<group>"; };
+		292CB4B71BC6369B003C0897 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		292EF7C91BBBA482004A89D9 /* libSocialSinaSSO.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSinaSSO.a; sourceTree = "<group>"; };
 		292EF7CA1BBBA482004A89D9 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
 		292EF7CB1BBBA482004A89D9 /* UMSocialSinaSSOHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSinaSSOHandler.h; sourceTree = "<group>"; };
@@ -155,6 +166,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		292CB4B01BC6369B003C0897 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		295B35221B5DD155006B9A0F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -184,6 +202,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		292CB4B41BC6369B003C0897 /* HouseLoanCalUITests */ = {
+			isa = PBXGroup;
+			children = (
+				292CB4B51BC6369B003C0897 /* HouseLoanCalUITests.m */,
+				292CB4B71BC6369B003C0897 /* Info.plist */,
+			);
+			path = HouseLoanCalUITests;
+			sourceTree = "<group>";
+		};
 		292EF7C81BBBA482004A89D9 /* SinaSSO */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +237,7 @@
 			children = (
 				295B35271B5DD155006B9A0F /* HouseLoanCal */,
 				295B35411B5DD155006B9A0F /* HouseLoanCalTests */,
+				292CB4B41BC6369B003C0897 /* HouseLoanCalUITests */,
 				29DAEE731BB3CD7D00E7F82B /* ThirdParty */,
 				29DAEE351BB2E6FC00E7F82B /* Frameworks */,
 				295B35261B5DD155006B9A0F /* Products */,
@@ -221,6 +249,7 @@
 			children = (
 				295B35251B5DD155006B9A0F /* HouseLoanCal.app */,
 				295B353E1B5DD155006B9A0F /* HouseLoanCalTests.xctest */,
+				292CB4B31BC6369B003C0897 /* HouseLoanCalUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -410,6 +439,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		292CB4B21BC6369B003C0897 /* HouseLoanCalUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 292CB4BA1BC6369B003C0897 /* Build configuration list for PBXNativeTarget "HouseLoanCalUITests" */;
+			buildPhases = (
+				292CB4AF1BC6369B003C0897 /* Sources */,
+				292CB4B01BC6369B003C0897 /* Frameworks */,
+				292CB4B11BC6369B003C0897 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				292CB4B91BC6369B003C0897 /* PBXTargetDependency */,
+			);
+			name = HouseLoanCalUITests;
+			productName = HouseLoanCalUITests;
+			productReference = 292CB4B31BC6369B003C0897 /* HouseLoanCalUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		295B35241B5DD155006B9A0F /* HouseLoanCal */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 295B35481B5DD155006B9A0F /* Build configuration list for PBXNativeTarget "HouseLoanCal" */;
@@ -454,6 +501,10 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = xuyang;
 				TargetAttributes = {
+					292CB4B21BC6369B003C0897 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 295B35241B5DD155006B9A0F;
+					};
 					295B35241B5DD155006B9A0F = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = 5F3JGZU2LG;
@@ -480,11 +531,19 @@
 			targets = (
 				295B35241B5DD155006B9A0F /* HouseLoanCal */,
 				295B353D1B5DD155006B9A0F /* HouseLoanCalTests */,
+				292CB4B21BC6369B003C0897 /* HouseLoanCalUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		292CB4B11BC6369B003C0897 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		295B35231B5DD155006B9A0F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -515,6 +574,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		292CB4AF1BC6369B003C0897 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				292CB4B61BC6369B003C0897 /* HouseLoanCalUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		295B35211B5DD155006B9A0F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -549,6 +616,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		292CB4B91BC6369B003C0897 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 295B35241B5DD155006B9A0F /* HouseLoanCal */;
+			targetProxy = 292CB4B81BC6369B003C0897 /* PBXContainerItemProxy */;
+		};
 		295B35401B5DD155006B9A0F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 295B35241B5DD155006B9A0F /* HouseLoanCal */;
@@ -577,6 +649,35 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		292CB4BB1BC6369B003C0897 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = HouseLoanCalUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xuyang.HouseLoanCalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "dda02244-2abc-4493-b83b-c2f8503e5967";
+				TEST_TARGET_NAME = HouseLoanCal;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		292CB4BC1BC6369B003C0897 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HouseLoanCalUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xuyang.HouseLoanCalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "dda02244-2abc-4493-b83b-c2f8503e5967";
+				TEST_TARGET_NAME = HouseLoanCal;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
 		295B35461B5DD155006B9A0F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -594,8 +695,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Yang Xu (5F3JGZU2LG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yang Xu (5F3JGZU2LG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yang Xu (8JG97H3BQR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yang Xu (8JG97H3BQR)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -615,10 +716,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "8d018865-954d-4604-a616-aa84b3a6758a";
+				PROVISIONING_PROFILE = "dda02244-2abc-4493-b83b-c2f8503e5967";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -640,8 +741,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Yang Xu (5F3JGZU2LG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yang Xu (5F3JGZU2LG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yang Xu (8JG97H3BQR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yang Xu (8JG97H3BQR)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -654,9 +755,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "8d018865-954d-4604-a616-aa84b3a6758a";
+				PROVISIONING_PROFILE = "dda02244-2abc-4493-b83b-c2f8503e5967";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -667,11 +768,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Yang Xu (5F3JGZU2LG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yang Xu (5F3JGZU2LG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yang Xu (8JG97H3BQR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yang Xu (8JG97H3BQR)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = HouseLoanCal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -684,7 +785,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xuyang.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8d018865-954d-4604-a616-aa84b3a6758a";
+				PROVISIONING_PROFILE = "dda02244-2abc-4493-b83b-c2f8503e5967";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -694,11 +795,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Yang Xu (5F3JGZU2LG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yang Xu (5F3JGZU2LG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yang Xu (8JG97H3BQR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yang Xu (8JG97H3BQR)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = HouseLoanCal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -712,7 +813,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xuyang.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8d018865-954d-4604-a616-aa84b3a6758a";
+				PROVISIONING_PROFILE = "dda02244-2abc-4493-b83b-c2f8503e5967";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -721,8 +822,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Yang Xu (5F3JGZU2LG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yang Xu (5F3JGZU2LG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yang Xu (8JG97H3BQR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yang Xu (8JG97H3BQR)";
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -736,7 +837,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xuyang.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8d018865-954d-4604-a616-aa84b3a6758a";
+				PROVISIONING_PROFILE = "dda02244-2abc-4493-b83b-c2f8503e5967";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HouseLoanCal.app/HouseLoanCal";
 			};
 			name = Debug;
@@ -745,8 +846,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Yang Xu (5F3JGZU2LG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yang Xu (5F3JGZU2LG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yang Xu (8JG97H3BQR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yang Xu (8JG97H3BQR)";
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = HouseLoanCalTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -756,7 +857,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xuyang.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8d018865-954d-4604-a616-aa84b3a6758a";
+				PROVISIONING_PROFILE = "dda02244-2abc-4493-b83b-c2f8503e5967";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HouseLoanCal.app/HouseLoanCal";
 			};
 			name = Release;
@@ -764,6 +865,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		292CB4BA1BC6369B003C0897 /* Build configuration list for PBXNativeTarget "HouseLoanCalUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				292CB4BB1BC6369B003C0897 /* Debug */,
+				292CB4BC1BC6369B003C0897 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		295B35201B5DD155006B9A0F /* Build configuration list for PBXProject "HouseLoanCal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
