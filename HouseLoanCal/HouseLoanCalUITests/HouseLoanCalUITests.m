@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 
-@interface HouseLoanCalUITests : XCTestCase <UIPickerViewAccessibilityDelegate>
+@interface HouseLoanCalUITests : XCTestCase
 
 @property (nonatomic, strong) XCUIApplication *app;
 @property (nonatomic, strong) XCUIElementQuery *tablesQuery;
@@ -29,7 +29,6 @@
     // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
     
     self.app = [[XCUIApplication alloc] init];
-    [self.app launch];
     self.tablesQuery = self.app.tables;
     
     // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
@@ -44,8 +43,7 @@
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
-    
-#pragma mark - Modify Input
+    [self.app launch];
     
     // 贷款金额
     XCUIElementQuery *inputValueCell = [self.tablesQuery.cells containingType:XCUIElementTypeStaticText identifier:@"贷款金额(万)"];
@@ -73,9 +71,6 @@
     XCTAssertTrue([valueTextField.value isEqualToString:@"100"], @"Strings are not equal %@ %@", @"100", valueTextField.value);
     XCTAssertTrue([periodTextField.value isEqualToString:@"1"], @"Strings are not equal %@ %@", @"1", periodTextField.value);
     XCTAssertTrue([rateTextField.value isEqualToString:@"4.00"], @"Strings are not equal %@ %@", @"4.00", rateTextField.value);
-    
-    
-#pragma mark - Calculate Output
 
 /*
  * 等额本金
@@ -108,9 +103,6 @@
     XCTAssertTrue([accuInterestValue.label isEqualToString:@"21,666.67"], @"Strings are not equal %@ %@", @"21,666.67", accuInterestValue.value);
     XCTAssertTrue([accuMoneyValue.label isEqualToString:@"1,021,666.67"], @"Strings are not equal %@ %@", @"1,021,666.67", accuMoneyValue.label);
     
-    
-#pragma mark - Reset Output
-    
     // 点击重置
     [valueTextField tap];
     XCUIElement *resetButton = self.app.toolbars.buttons[@"重置"];
@@ -122,9 +114,6 @@
 }
 
 - (void)test2_CommerLoanPage {
-
-    
-#pragma mark - Modify Input
     
     // 切换到商业贷款Tab页
     [self.app.tabBars.buttons[@"商业"] tap];
@@ -169,10 +158,7 @@
     XCTAssertTrue([periodTextField.value isEqualToString:@"20"], @"Strings are not equal %@ %@", @"20", periodTextField.value);
     XCTAssertTrue([rateTextField.value isEqualToString:@"5.00"], @"Strings are not equal %@ %@", @"5.00", rateTextField.value);
     XCTAssertTrue([discountTextField.value isEqualToString:@"0.9"], @"String are not equal %@ %@", @"0.9", discountTextField.value);
-
     
-    
-#pragma mark - Calculate Output
     
     // 点击计算
     XCUIElement *calButton = self.app.toolbars.buttons[@"计算"];
@@ -193,9 +179,6 @@
     XCTAssertTrue([accuMoneyValue.label isEqualToString:@"725,937.50"], @"Strings are not equal %@ %@", @"725,937.50", accuMoneyValue.label);
     
     
-    
-#pragma mark - Reset Output
-    
     // 点击重置
     [valueTextField tap];
     XCUIElement *resetButton = self.app.toolbars.buttons[@"重置"];
@@ -208,9 +191,6 @@
 
 
 - (void)test3_MixedLoanPage {
-    
-    
-#pragma mark - Modify Input
     
     // 切换到组合贷款Tab页
     [self.app.tabBars.buttons[@"组合"] tap];
@@ -232,9 +212,6 @@
     XCTAssertTrue([commerValueTextField.value isEqualToString:@"50"], @"Strings are not equal %@ %@", @"50", commerValueTextField.value);
     
     
-    
-#pragma mark - Calculate Output
-    
     // 点击计算
     XCUIElement *calButton = self.app.toolbars.buttons[@"计算"];
     [calButton tap];
@@ -253,9 +230,6 @@
     XCUIElement *accuMoneyValue = [[accuMoneyCell childrenMatchingType:XCUIElementTypeStaticText] elementBoundByIndex:1];
     XCTAssertTrue([accuMoneyValue.label isEqualToString:@"2,549,589.96"], @"Strings are not equal %@ %@", @"2,549,589.96", accuMoneyValue.label);
     
-    
-    
-#pragma mark - Reset Output
     
     // 点击重置
     [profundValueTextField tap];
@@ -283,5 +257,6 @@
     [self.app.alerts[@"No Wechat"].collectionViews.buttons[@"OK"] tap];
     
 }
+
 
 @end
